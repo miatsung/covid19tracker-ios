@@ -12,8 +12,9 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 
-class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate {
+class TodayViewController: UIViewController, NCWidgetProviding {
     
+    @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var casesNumLabel: UILabel!
     @IBOutlet weak var deathNumLabel: UILabel!
     @IBOutlet weak var recoverdNumLabel: UILabel!
@@ -26,22 +27,22 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     // Constants
     let GLOBAL_URL = "https://corona.lmao.ninja/all"
     let CORONAVIRUS_URL = "https://corona.lmao.ninja/countries"
+    let APP_ID = "e72ca729af228beabd5d20e3b7749713"
     
     
     // Variable
-    let locationManager = CLLocationManager()
+//    let locationManager = CLLocationManager()
     
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
 
-        getCoroData(url: CORONAVIRUS_URL)
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -87,4 +88,29 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
 
     }
     
+    //MARK: - Location Manager Delegate Methods
+    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let location = locations[locations.count-1]
+//        if location.horizontalAccuracy > 0 {
+//            locationManager.stopUpdatingLocation()
+//            
+//            print("longtitude = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
+//            
+//            let latitude = String(location.coordinate.latitude)
+//            let longtitude = String(location.coordinate.longitude)
+//            
+//            let params : [String : String] = ["lat" : latitude, "lon" : longtitude, "appid" : APP_ID]
+//            print("Param is \(params)")
+//            
+//            getCoroData(url: CORONAVIRUS_URL)
+//        }
+//    }
+//    
+//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+//        print(error)
+//        countryLabel.text = "Location Unavailable"
+//        
+//    }
+        
 }

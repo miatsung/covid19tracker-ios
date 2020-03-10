@@ -181,6 +181,7 @@
                     <size key="freeformSize" width="320" height="200"/>
                     <connections>
                         <outlet property="casesNumLabel" destination="9v9-9k-ZiO" id="zm4-zN-Kzb"/>
+                        <outlet property="countryLabel" destination="I4E-a2-puP" id="LZU-fM-6br"/>
                         <outlet property="criticalNumLabel" destination="SSW-58-WcL" id="uyf-TA-sk8"/>
                         <outlet property="deathNumLabel" destination="eer-UI-1qP" id="kmX-CI-Nge"/>
                         <outlet property="recoverdNumLabel" destination="C1y-Fy-Hwl" id="Xso-zS-K0E"/>
