@@ -36,7 +36,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        print("widget viewdidload")
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
@@ -78,8 +77,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     //JSON Parsing
     
     func updateCoroData(json : JSON) {
-        print("result is ")
-
+        print(json[0]["cases"].stringValue)
         casesNumLabel.text = json[0]["cases"].stringValue
         deathNumLabel.text = json[0]["deaths"].stringValue
         recoverdNumLabel.text = json[0]["recovered"].stringValue
