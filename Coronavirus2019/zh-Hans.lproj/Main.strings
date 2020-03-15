@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Today Cases"; ObjectID = "1Dq-KN-amk"; */
+"1Dq-KN-amk.text" = "Today Cases";
+
+/* Class = "UILabel"; text = "Death"; ObjectID = "2RD-va-fI3"; */
+"2RD-va-fI3.text" = "Death";
+
+/* Class = "UIViewController"; title = "MainViewController"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "MainViewController";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "E5k-VI-2CR"; */
+"E5k-VI-2CR.text" = "Country";
+
+/* Class = "UILabel"; text = "Global data"; ObjectID = "Jef-5b-3zF"; */
+"Jef-5b-3zF.text" = "Global data";
+
+/* Class = "UILabel"; text = "County data"; ObjectID = "P19-DZ-ZjU"; */
+"P19-DZ-ZjU.text" = "County data";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Thz-7u-4lq"; */
+"Thz-7u-4lq.text" = "Label";
+
+/* Class = "UILabel"; text = "Please choose your Widget Country"; ObjectID = "UyR-Jv-a60"; */
+"UyR-Jv-a60.text" = "Please choose your Widget Country";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XK3-qj-obm"; */
+"XK3-qj-obm.text" = "Label";
+
+/* Class = "UILabel"; text = "Recoverd"; ObjectID = "aCs-au-VfP"; */
+"aCs-au-VfP.text" = "Recoverd";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "c9x-VL-i1b"; */
+"c9x-VL-i1b.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "e06-2v-crZ"; */
+"e06-2v-crZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Updated time"; ObjectID = "emt-Zq-6IA"; */
+"emt-Zq-6IA.text" = "Updated time";
+
+/* Class = "UILabel"; text = "If you have any advice, please feel free to send email to mia.tsung311@gmail.com"; ObjectID = "jnA-oE-V72"; */
+"jnA-oE-V72.text" = "If you have any advice, please feel free to send email to mia.tsung311@gmail.com";
+
+/* Class = "UILabel"; text = "Today Deaths"; ObjectID = "nnm-4l-NED"; */
+"nnm-4l-NED.text" = "Today Deaths";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sFG-qk-j0B"; */
+"sFG-qk-j0B.text" = "Label";
+
+/* Class = "UILabel"; text = "Cases"; ObjectID = "z6B-Ao-gp4"; */
+"z6B-Ao-gp4.text" = "Cases";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zdN-mZ-ROl"; */
+"zdN-mZ-ROl.text" = "Label";

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Localizable.strings">
+   </FileRef>
+   <FileRef
       location = "group:Coronavirus2019.xcodeproj">
    </FileRef>
    <FileRef

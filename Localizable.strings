@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Mia Tsung on 3/11/20.
+  
+*/
+
+"Cases" = "Cases";
+"Death" = "Death";
+"Recovered" = "Recovered";
+"Critical" = "Critical";
+"Today Cases" = "Today Cases";
+"Today Death" = "Today Death";

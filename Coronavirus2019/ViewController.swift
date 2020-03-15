@@ -8,11 +8,14 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     let countryArray = ["China","Italy","Iran","S.Korea","Spain","Germany","USA","Japan","Switzerland","Netherlands","UK","Norway","Belgium","Denmark","Austria","Singapore","Malaysia","Hong Kong","Bahrain","Austrlia","Greece","Canada","UAE","Iraq","Iceland"]
     var selectedCountry = ""
+    
+    
     
     @IBOutlet weak var countryPicker: UIPickerView!
     
@@ -22,6 +25,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // Do any additional setup after loading the view.
         countryPicker.delegate = self
         countryPicker.dataSource = self
+        countryPicker.selectRow(0, inComponent: 0, animated: true)
+            
         
     }
     
@@ -45,9 +50,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.selectedCountry = countryArray[row]
         print(self.selectedCountry)
+        
+        
+        NotificationCenter.default.post(name: Notification.Name("didReceiveData"), object: self, userInfo: ["country": self.selectedCountry])
+        print("posted")
 //        getCoconavirusData()
     }
-
-
 }
 

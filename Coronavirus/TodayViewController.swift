@@ -12,8 +12,9 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 
+
 class TodayViewController: UIViewController, NCWidgetProviding {
-    
+
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var casesNumLabel: UILabel!
     @IBOutlet weak var deathNumLabel: UILabel!
@@ -29,11 +30,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let CORONAVIRUS_URL = "https://corona.lmao.ninja/countries"
     let APP_ID = "e72ca729af228beabd5d20e3b7749713"
     
+    let buttonTitle = NSLocalizedString("bear", comment: "The name of the animal")
+    print(buttonTitle)
+    
     
     // Variable
 //    let locationManager = CLLocationManager()
     
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,6 +45,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 //        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
 //        locationManager.requestWhenInUseAuthorization()
 //        locationManager.startUpdatingLocation()
+//        NotificationCenter.defaultCenter().addObserver(self, selector: "dataReceived:", name: "SpecialKey", object: nil)
+        
+        print("viewdidload")
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name("didReceiveData"), object: nil)
+//        print("starting to observe")
+        
 
     }
         
@@ -53,6 +62,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
         
         completionHandler(NCUpdateResult.newData)
+    }
+    
+    // Widget receive courty data from main view controller
+    @objc func onDidReceiveData(_ notification:Notification) {
+        // Do something now
+        print("Received Data")
+        print(notification.userInfo!)
+         
     }
     
     //Networking

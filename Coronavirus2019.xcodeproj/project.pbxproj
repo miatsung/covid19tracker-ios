@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0BDB261B132B7E8DEC03DE32 /* Pods_Coronavirus2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F05FAF3CE4C0FF1EC2021 /* Pods_Coronavirus2019.framework */; };
 		202B7475E967A652291526E9 /* Pods_Coronavirus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2901CE4FB8A703D5292EB236 /* Pods_Coronavirus.framework */; };
+		FC78170E241879E200E52A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA5CE84241718FD00B5A80E /* Assets.xcassets */; };
+		FC78171124187B8500E52A5F /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78171024187B8500E52A5F /* shared.swift */; };
 		FCA5CE7C241718FC00B5A80E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5CE7B241718FC00B5A80E /* AppDelegate.swift */; };
 		FCA5CE7E241718FC00B5A80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5CE7D241718FC00B5A80E /* SceneDelegate.swift */; };
 		FCA5CE80241718FC00B5A80E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5CE7F241718FC00B5A80E /* ViewController.swift */; };
@@ -52,6 +54,10 @@
 		54C79E524BD60F4557812838 /* Pods-Coronavirus2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronavirus2019.debug.xcconfig"; path = "Target Support Files/Pods-Coronavirus2019/Pods-Coronavirus2019.debug.xcconfig"; sourceTree = "<group>"; };
 		7CBD11498C959FC847890975 /* Pods-Coronavirus2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronavirus2019.release.xcconfig"; path = "Target Support Files/Pods-Coronavirus2019/Pods-Coronavirus2019.release.xcconfig"; sourceTree = "<group>"; };
 		F2ACD160AF629D8123B7A1A8 /* Pods-Coronavirus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronavirus.release.xcconfig"; path = "Target Support Files/Pods-Coronavirus/Pods-Coronavirus.release.xcconfig"; sourceTree = "<group>"; };
+		FC78171024187B8500E52A5F /* shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shared.swift; sourceTree = "<group>"; };
+		FC7817122419843D00E52A5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		FC7817132419843D00E52A5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FC7817142419843D00E52A5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		FCA5CE78241718FC00B5A80E /* Coronavirus2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coronavirus2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA5CE7B241718FC00B5A80E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA5CE7D241718FC00B5A80E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 		FCA5CE6F241718FC00B5A80E = {
 			isa = PBXGroup;
 			children = (
+				FC78171024187B8500E52A5F /* shared.swift */,
 				FCA5CE7A241718FC00B5A80E /* Coronavirus2019 */,
 				FCA5CE9724171A9900B5A80E /* Coronavirus */,
 				FCA5CE9424171A9900B5A80E /* Frameworks */,
@@ -224,6 +231,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = FCA5CE6F241718FC00B5A80E;
 			productRefGroup = FCA5CE79241718FC00B5A80E /* Products */;
@@ -251,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC78170E241879E200E52A5F /* Assets.xcassets in Resources */,
 				FCA5CE9C24171A9900B5A80E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +337,7 @@
 			files = (
 				FCA5CE80241718FC00B5A80E /* ViewController.swift in Sources */,
 				FCA5CE7C241718FC00B5A80E /* AppDelegate.swift in Sources */,
+				FC78171124187B8500E52A5F /* shared.swift in Sources */,
 				FCA5CE7E241718FC00B5A80E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +365,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCA5CE82241718FC00B5A80E /* Base */,
+				FC7817122419843D00E52A5F /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -363,6 +374,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCA5CE87241718FD00B5A80E /* Base */,
+				FC7817132419843D00E52A5F /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -371,6 +383,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCA5CE9B24171A9900B5A80E /* Base */,
+				FC7817142419843D00E52A5F /* zh-Hans */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -382,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -442,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -547,7 +562,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jumin.Coronavirus2019.Coronavirus;
+				PRODUCT_BUNDLE_IDENTIFIER = jumin.Coronavirus2019.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -568,7 +583,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jumin.Coronavirus2019.Coronavirus;
+				PRODUCT_BUNDLE_IDENTIFIER = jumin.Coronavirus2019.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
