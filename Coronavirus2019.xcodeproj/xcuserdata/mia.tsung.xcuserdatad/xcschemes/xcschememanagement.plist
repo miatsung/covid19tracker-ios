@@ -9,10 +9,18 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>Coronavirus2019.xcscheme_^#shared#^_</key>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FCA5CE77241718FC00B5A80E</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FCA5CE9224171A9900B5A80E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

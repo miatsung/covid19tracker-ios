@@ -187,6 +187,7 @@
                         <outlet property="recoverdNumLabel" destination="C1y-Fy-Hwl" id="Xso-zS-K0E"/>
                         <outlet property="todayCasesNumLabel" destination="h0R-GF-zD5" id="SRI-Qe-xig"/>
                         <outlet property="todayDeathNumLabel" destination="XFa-c7-jcO" id="xzb-zc-Awz"/>
+                        <outlet property="widgetView" destination="Itt-Qh-IkM" id="ohE-99-BRf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

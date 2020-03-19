@@ -24,6 +24,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var criticalNumLabel: UILabel!
     
     
+    @IBOutlet weak var widgetView: UIView!
     
     // Constants
     let GLOBAL_URL = "https://corona.lmao.ninja/all"
@@ -31,9 +32,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let APP_ID = "e72ca729af228beabd5d20e3b7749713"
     
     let buttonTitle = NSLocalizedString("bear", comment: "The name of the animal")
-    print(buttonTitle)
-    
-    
+    private let kAppGroupName = "group.mia.tsung.com.2019coro"
+    private var sharedContainer : UserDefaults?
+
     // Variable
 //    let locationManager = CLLocationManager()
     
@@ -46,14 +47,36 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 //        locationManager.requestWhenInUseAuthorization()
 //        locationManager.startUpdatingLocation()
 //        NotificationCenter.defaultCenter().addObserver(self, selector: "dataReceived:", name: "SpecialKey", object: nil)
-        
+        self.sharedContainer = UserDefaults(suiteName: kAppGroupName)
+        self.fetchDataFromSharedContainer()
+        self.widgetView.setNeedsDisplay()
         print("viewdidload")
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name("didReceiveData"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name("didReceiveData"), object: nil)
 //        print("starting to observe")
         
 
     }
-        
+       
+    
+    //MARK: Private Methods
+    /// This method fetches the data to be displayed in widget from shared container.
+    fileprivate func fetchDataFromSharedContainer()
+    {
+        print("in #fetchDataFromSharedContainer")
+        if let sharedContainer = self.sharedContainer {
+            print("get shared container, now next")
+            if let selectedCountry = sharedContainer.string(forKey: "selectedCountry")
+            {
+                print("in set label")
+                print(selectedCountry)
+                self.countryLabel.text = String(selectedCountry).uppercased()
+                
+            }
+        } else {
+            print("Not in set label")
+        }
+    }
+    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         
