@@ -10,7 +10,7 @@
         <!--MainViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController restorationIdentifier="MainVC" storyboardIdentifier="MainVC" title="MainViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Coronavirus2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MainVC" storyboardIdentifier="MainVC" title="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Coronavirus2019" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,10 +50,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLb-BK-Ub5">
-                                        <rect key="frame" x="8" y="106" width="398" height="87"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Updated time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emt-Zq-6IA">
                                         <rect key="frame" x="8" y="803" width="398" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -165,6 +161,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLb-BK-Ub5">
+                                        <rect key="frame" x="8" y="87" width="398" height="87"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </pickerView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="jnA-oE-V72" firstAttribute="leading" secondItem="89W-0U-GtE" secondAttribute="leading" constant="8" id="Ngk-rd-ZOG"/>

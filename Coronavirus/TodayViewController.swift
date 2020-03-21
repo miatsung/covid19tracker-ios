@@ -29,7 +29,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // Constants
     let GLOBAL_URL = "https://corona.lmao.ninja/all"
     let CORONAVIRUS_URL = "https://corona.lmao.ninja/countries"
-    let APP_ID = "e72ca729af228beabd5d20e3b7749713"
+
     
     let buttonTitle = NSLocalizedString("bear", comment: "The name of the animal")
     private let kAppGroupName = "group.mia.tsung.com.2019coro"
@@ -42,18 +42,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        locationManager.delegate = self
-//        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-//        locationManager.requestWhenInUseAuthorization()
-//        locationManager.startUpdatingLocation()
-//        NotificationCenter.defaultCenter().addObserver(self, selector: "dataReceived:", name: "SpecialKey", object: nil)
         self.sharedContainer = UserDefaults(suiteName: kAppGroupName)
         self.fetchDataFromSharedContainer()
         self.widgetView.setNeedsDisplay()
         print("viewdidload")
-//        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name("didReceiveData"), object: nil)
-//        print("starting to observe")
-        
+   
 
     }
        
@@ -95,62 +88,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
          
     }
     
-    //Networking
-    func getCoroData(url: String) {
-        
-        Alamofire.request(url, method: .get).responseJSON { response in
-             if response.result.isSuccess {
-                
-                print("Success! Got coro data")
-               
-                let coroDataJSON : JSON = JSON(response.result.value!)
-                print(coroDataJSON)
-                self.updateCoroData(json: coroDataJSON)
-               
-             } else {
-               print("Error \(String(describing: response.result.error))")
-            }
-                           
-        }
-    }
-    
-    
     //JSON Parsing
-    
-    func updateCoroData(json : JSON) {
-        print(json[0]["cases"].stringValue)
-        casesNumLabel.text = json[0]["cases"].stringValue
-        deathNumLabel.text = json[0]["deaths"].stringValue
-        recoverdNumLabel.text = json[0]["recovered"].stringValue
-        todayCasesNumLabel.text = json[0]["todayCases"].stringValue
-        todayDeathNumLabel.text = json[0]["todayDeaths"].stringValue
-        criticalNumLabel.text = json[0]["critical"].stringValue
+          
+//          func updateCoroData(json : JSON) {
+//              print(json[0]["cases"].stringValue)
+//              casesNumLabel.text = json[0]["cases"].stringValue
+//              deathNumLabel.text = json[0]["deaths"].stringValue
+//              recoverdNumLabel.text = json[0]["recovered"].stringValue
+//              todayCasesNumLabel.text = json[0]["todayCases"].stringValue
+//              todayDeathNumLabel.text = json[0]["todayDeaths"].stringValue
+//              criticalNumLabel.text = json[0]["critical"].stringValue
+//
+//          }
+       
 
-    }
-    
-    //MARK: - Location Manager Delegate Methods
-    
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let location = locations[locations.count-1]
-//        if location.horizontalAccuracy > 0 {
-//            locationManager.stopUpdatingLocation()
-//            
-//            print("longtitude = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
-//            
-//            let latitude = String(location.coordinate.latitude)
-//            let longtitude = String(location.coordinate.longitude)
-//            
-//            let params : [String : String] = ["lat" : latitude, "lon" : longtitude, "appid" : APP_ID]
-//            print("Param is \(params)")
-//            
-//            getCoroData(url: CORONAVIRUS_URL)
-//        }
-//    }
-//    
-//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//        print(error)
-//        countryLabel.text = "Location Unavailable"
-//        
-//    }
         
 }
