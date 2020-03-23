@@ -27,10 +27,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var widgetView: UIView!
     
     // Constants
+    
     let GLOBAL_URL = "https://corona.lmao.ninja/all"
     let CORONAVIRUS_URL = "https://corona.lmao.ninja/countries"
 
-    
     let buttonTitle = NSLocalizedString("bear", comment: "The name of the animal")
     private let kAppGroupName = "group.mia.tsung.com.2019coro"
     private var sharedContainer : UserDefaults?
@@ -42,6 +42,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+       
         self.sharedContainer = UserDefaults(suiteName: kAppGroupName)
         self.fetchDataFromSharedContainer()
         self.widgetView.setNeedsDisplay()
@@ -88,19 +89,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
          
     }
     
-    //JSON Parsing
+//    JSON Parsing
           
-//          func updateCoroData(json : JSON) {
-//              print(json[0]["cases"].stringValue)
-//              casesNumLabel.text = json[0]["cases"].stringValue
-//              deathNumLabel.text = json[0]["deaths"].stringValue
-//              recoverdNumLabel.text = json[0]["recovered"].stringValue
-//              todayCasesNumLabel.text = json[0]["todayCases"].stringValue
-//              todayDeathNumLabel.text = json[0]["todayDeaths"].stringValue
-//              criticalNumLabel.text = json[0]["critical"].stringValue
-//
-//          }
-       
+      func updateCoroData(json : JSON) {
+          print(json[0]["cases"].stringValue)
+          casesNumLabel.text = json[0]["cases"].stringValue
+          deathNumLabel.text = json[0]["deaths"].stringValue
+          recoverdNumLabel.text = json[0]["recovered"].stringValue
+          todayCasesNumLabel.text = json[0]["todayCases"].stringValue
+          todayDeathNumLabel.text = json[0]["todayDeaths"].stringValue
+          criticalNumLabel.text = json[0]["critical"].stringValue
+
+      }
+   
 
         
 }

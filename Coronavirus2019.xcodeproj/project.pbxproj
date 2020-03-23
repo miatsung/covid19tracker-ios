@@ -21,6 +21,8 @@
 		FCA5CE9924171A9900B5A80E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5CE9824171A9900B5A80E /* TodayViewController.swift */; };
 		FCA5CE9C24171A9900B5A80E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA5CE9A24171A9900B5A80E /* MainInterface.storyboard */; };
 		FCA5CEA024171A9900B5A80E /* Coronavirus.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCA5CE9324171A9900B5A80E /* Coronavirus.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FCB24A532429335400ABB8F3 /* WidgetCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB24A512429294200ABB8F3 /* WidgetCountryViewController.swift */; };
+		FCB24A572429611D00ABB8F3 /* WidgetCountrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		FCA5CE9D24171A9900B5A80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA5CEA524174F0600B5A80E /* Coronavirus2019.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coronavirus2019.entitlements; sourceTree = "<group>"; };
 		FCA5CEA624174F2700B5A80E /* Coronavirus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coronavirus.entitlements; sourceTree = "<group>"; };
+		FCB24A512429294200ABB8F3 /* WidgetCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCountryViewController.swift; sourceTree = "<group>"; };
+		FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCountrySelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +135,13 @@
 		FCA5CE7A241718FC00B5A80E /* Coronavirus2019 */ = {
 			isa = PBXGroup;
 			children = (
-				FCA5CEA524174F0600B5A80E /* Coronavirus2019.entitlements */,
 				FCA5CE7B241718FC00B5A80E /* AppDelegate.swift */,
-				FCA5CE7D241718FC00B5A80E /* SceneDelegate.swift */,
-				FCA5CE7F241718FC00B5A80E /* MainViewController.swift */,
 				FCA5CE81241718FC00B5A80E /* Main.storyboard */,
+				FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */,
+				FCA5CE7F241718FC00B5A80E /* MainViewController.swift */,
+				FCB24A512429294200ABB8F3 /* WidgetCountryViewController.swift */,
+				FCA5CE7D241718FC00B5A80E /* SceneDelegate.swift */,
+				FCA5CEA524174F0600B5A80E /* Coronavirus2019.entitlements */,
 				FCA5CE84241718FD00B5A80E /* Assets.xcassets */,
 				FCA5CE86241718FD00B5A80E /* LaunchScreen.storyboard */,
 				FCA5CE89241718FD00B5A80E /* Info.plist */,
@@ -156,9 +162,9 @@
 		FCA5CE9724171A9900B5A80E /* Coronavirus */ = {
 			isa = PBXGroup;
 			children = (
-				FCA5CEA624174F2700B5A80E /* Coronavirus.entitlements */,
-				FCA5CE9824171A9900B5A80E /* TodayViewController.swift */,
 				FCA5CE9A24171A9900B5A80E /* MainInterface.storyboard */,
+				FCA5CE9824171A9900B5A80E /* TodayViewController.swift */,
+				FCA5CEA624174F2700B5A80E /* Coronavirus.entitlements */,
 				FCA5CE9D24171A9900B5A80E /* Info.plist */,
 			);
 			path = Coronavirus;
@@ -337,6 +343,7 @@
 			files = (
 				FCA5CE80241718FC00B5A80E /* MainViewController.swift in Sources */,
 				FCA5CE7C241718FC00B5A80E /* AppDelegate.swift in Sources */,
+				FCB24A572429611D00ABB8F3 /* WidgetCountrySelectViewController.swift in Sources */,
 				FC78171124187B8500E52A5F /* shared.swift in Sources */,
 				FCA5CE7E241718FC00B5A80E /* SceneDelegate.swift in Sources */,
 			);
@@ -347,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA5CE9924171A9900B5A80E /* TodayViewController.swift in Sources */,
+				FCB24A532429335400ABB8F3 /* WidgetCountryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
