@@ -20,10 +20,13 @@ class MainViewController: UIViewController {
     let globalFileURL = ""
     let FileURL = ""
     
+    let coroDataModel = CoroDataModel()
+
    
     private var globalCoronaData : JSON?
     private var countriesCoronaData : JSON?
     
+    @IBOutlet weak var globalLabel: UILabel!
     @IBOutlet weak var globalCasesLabel: UILabel!
     @IBOutlet weak var globalDeathsLabel: UILabel!
     @IBOutlet weak var globalRecoverLabel: UILabel!
@@ -58,6 +61,13 @@ class MainViewController: UIViewController {
                 print("Error \(String(describing: response.result.error))")
                 self.globalCoronaData = self.readGlobalDataFromLocalFile()
             }
+            
+            if let globalJsonData = self.globalCoronaData {
+                self.updateGlobalCorodata(json: globalJsonData)
+            } else {
+                self.globalLabel.text = "Global data unavailable, please try again later"
+            }
+            
         }
     }
 
@@ -169,9 +179,21 @@ class MainViewController: UIViewController {
         }
     }
        
+    // JSON Parsing
     
+    func updateGlobalCorodata(json: JSON) {
+        coroDataModel.globalCasesNum = json["cases"].intValue
+        coroDataModel.globalDeathsNum = json["deaths"].intValue
+        coroDataModel.globalRecoverNum = json["recovered"].intValue
+        
+        updateUI()
+    }
    
+    // UI Update
     func updateUI() {
+        globalCasesLabel.text = String(coroDataModel.globalCasesNum)
+        globalDeathsLabel.text = String(coroDataModel.globalDeathsNum)
+        globalRecoverLabel.text = String(coroDataModel.globalRecoverNum)
         
     }
 //       func updateCoroData(json : JSON) {

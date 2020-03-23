@@ -22,6 +22,7 @@
 		FCA5CE9C24171A9900B5A80E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA5CE9A24171A9900B5A80E /* MainInterface.storyboard */; };
 		FCA5CEA024171A9900B5A80E /* Coronavirus.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCA5CE9324171A9900B5A80E /* Coronavirus.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCB24A572429611D00ABB8F3 /* WidgetCountrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */; };
+		FCB24A5924296AFD00ABB8F3 /* CoroDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB24A5824296AFD00ABB8F3 /* CoroDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		FCA5CEA524174F0600B5A80E /* Coronavirus2019.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coronavirus2019.entitlements; sourceTree = "<group>"; };
 		FCA5CEA624174F2700B5A80E /* Coronavirus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coronavirus.entitlements; sourceTree = "<group>"; };
 		FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCountrySelectViewController.swift; sourceTree = "<group>"; };
+		FCB24A5824296AFD00ABB8F3 /* CoroDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoroDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			children = (
 				FCA5CE7B241718FC00B5A80E /* AppDelegate.swift */,
 				FCA5CE81241718FC00B5A80E /* Main.storyboard */,
+				FCB24A5824296AFD00ABB8F3 /* CoroDataModel.swift */,
 				FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */,
 				FCA5CE7F241718FC00B5A80E /* MainViewController.swift */,
 				FCA5CE7D241718FC00B5A80E /* SceneDelegate.swift */,
@@ -340,6 +343,7 @@
 			files = (
 				FCA5CE80241718FC00B5A80E /* MainViewController.swift in Sources */,
 				FCA5CE7C241718FC00B5A80E /* AppDelegate.swift in Sources */,
+				FCB24A5924296AFD00ABB8F3 /* CoroDataModel.swift in Sources */,
 				FCB24A572429611D00ABB8F3 /* WidgetCountrySelectViewController.swift in Sources */,
 				FC78171124187B8500E52A5F /* shared.swift in Sources */,
 				FCA5CE7E241718FC00B5A80E /* SceneDelegate.swift in Sources */,
