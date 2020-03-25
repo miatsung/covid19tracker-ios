@@ -32,6 +32,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var globalCoronaData : JSON?
     private var countriesCoronaData : JSON?
     
+    @IBOutlet weak var label1: UILabel!
+    
     @IBOutlet weak var globalLabel: UILabel!
     @IBOutlet weak var globalCasesLabel: UILabel!
     @IBOutlet weak var globalDeathsLabel: UILabel!
@@ -43,6 +45,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+//        label1.layer.cornerRadius = 14
+//        
         getGlobalCoronaData()
         getCountryCoronaData()
         
