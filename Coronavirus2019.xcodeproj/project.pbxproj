@@ -11,6 +11,8 @@
 		202B7475E967A652291526E9 /* Pods_Coronavirus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2901CE4FB8A703D5292EB236 /* Pods_Coronavirus.framework */; };
 		FC78170E241879E200E52A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA5CE84241718FD00B5A80E /* Assets.xcassets */; };
 		FC78171124187B8500E52A5F /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78171024187B8500E52A5F /* shared.swift */; };
+		FC9B4326242BDC8800BF1939 /* CountryDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9B4324242BDC8800BF1939 /* CountryDataTableViewCell.swift */; };
+		FC9B4327242BDC8800BF1939 /* CountryDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9B4325242BDC8800BF1939 /* CountryDataTableViewCell.xib */; };
 		FCA5CE7C241718FC00B5A80E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5CE7B241718FC00B5A80E /* AppDelegate.swift */; };
 		FCA5CE7E241718FC00B5A80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5CE7D241718FC00B5A80E /* SceneDelegate.swift */; };
 		FCA5CE80241718FC00B5A80E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5CE7F241718FC00B5A80E /* MainViewController.swift */; };
@@ -60,6 +62,8 @@
 		FC7817122419843D00E52A5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		FC7817132419843D00E52A5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FC7817142419843D00E52A5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
+		FC9B4324242BDC8800BF1939 /* CountryDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataTableViewCell.swift; sourceTree = "<group>"; };
+		FC9B4325242BDC8800BF1939 /* CountryDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryDataTableViewCell.xib; sourceTree = "<group>"; };
 		FCA5CE78241718FC00B5A80E /* Coronavirus2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coronavirus2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA5CE7B241718FC00B5A80E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA5CE7D241718FC00B5A80E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			children = (
 				FCA5CE7B241718FC00B5A80E /* AppDelegate.swift */,
 				FCA5CE81241718FC00B5A80E /* Main.storyboard */,
+				FC9B4324242BDC8800BF1939 /* CountryDataTableViewCell.swift */,
+				FC9B4325242BDC8800BF1939 /* CountryDataTableViewCell.xib */,
 				FCB24A5824296AFD00ABB8F3 /* CoroDataModel.swift */,
 				FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */,
 				FCA5CE7F241718FC00B5A80E /* MainViewController.swift */,
@@ -257,6 +263,7 @@
 			files = (
 				FCA5CE88241718FD00B5A80E /* LaunchScreen.storyboard in Resources */,
 				FCA5CE85241718FD00B5A80E /* Assets.xcassets in Resources */,
+				FC9B4327242BDC8800BF1939 /* CountryDataTableViewCell.xib in Resources */,
 				FCA5CE83241718FC00B5A80E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +350,7 @@
 			files = (
 				FCA5CE80241718FC00B5A80E /* MainViewController.swift in Sources */,
 				FCA5CE7C241718FC00B5A80E /* AppDelegate.swift in Sources */,
+				FC9B4326242BDC8800BF1939 /* CountryDataTableViewCell.swift in Sources */,
 				FCB24A5924296AFD00ABB8F3 /* CoroDataModel.swift in Sources */,
 				FCB24A572429611D00ABB8F3 /* WidgetCountrySelectViewController.swift in Sources */,
 				FC78171124187B8500E52A5F /* shared.swift in Sources */,

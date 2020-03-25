@@ -180,6 +180,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="countryDataTableView" destination="rCh-gm-fqS" id="g1L-Tp-ZdH"/>
                         <outlet property="globalCasesLabel" destination="XK3-qj-obm" id="aH4-un-yna"/>
                         <outlet property="globalDeathsLabel" destination="Thz-7u-4lq" id="gJ3-n7-tCu"/>
                         <outlet property="globalLabel" destination="Jef-5b-3zF" id="e3L-VQ-XyR"/>

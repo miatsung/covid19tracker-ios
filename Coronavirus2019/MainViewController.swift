@@ -10,7 +10,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    
     
     // Constants
     let defaults = UserDefaults.standard
@@ -21,6 +24,9 @@ class MainViewController: UIViewController {
     let FileURL = ""
     
     let coroDataModel = CoroDataModel()
+    
+    let countryArray = ["China","Italy","Iran","S.Korea","Spain","Germany","USA","Japan","Switzerland","Netherlands","UK","Norway","Belgium","Denmark","Austria","Singapore","Malaysia","Hong Kong","Bahrain","Austrlia","Greece","Canada","UAE","Iraq","Iceland"]
+          
 
    
     private var globalCoronaData : JSON?
@@ -30,6 +36,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var globalCasesLabel: UILabel!
     @IBOutlet weak var globalDeathsLabel: UILabel!
     @IBOutlet weak var globalRecoverLabel: UILabel!
+
+    @IBOutlet weak var countryDataTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +46,38 @@ class MainViewController: UIViewController {
         getGlobalCoronaData()
         getCountryCoronaData()
         
+        countryDataTableView.delegate = self
+        countryDataTableView.dataSource = self
+        
+        // Register CountryDataTableViewCell.xib
+        countryDataTableView.register(UINib(nibName: "CountryDataTableViewCell", bundle: nil), forCellReuseIdentifier: "customCountryDataCell")
+    
+        
     }
     
     
     
+    
+    
+    // CountryTableView delegate & datasource protocols
+    
+  
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
+        return countryArray.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCountryDataCell", for: indexPath) as! CountryDataTableViewCell
+        cell.countryNameLabel.text = "US"
+        cell.confirmedNumLabel.text = "150"
+        cell.deathsNumLabel.text = "15"
+        cell.revoceredNumLabel.text = "9"
+        return cell
+        
+    }
    
     
     //Networking & async call save to local
