@@ -11,11 +11,13 @@ class CoroDataModel {
     var globalCasesNum = 0
     var globalDeathsNum = 0
     var globalRecoverNum = 0
+    var globalActiveNum = 0
     var countryCasesNum = 0
     var countryTodayCasesNum = 0
     var countryDeathsNum = 0
     var countryTodayDeathsNum = 0
     var countryRecoverNum = 0
+    
     
 }
 

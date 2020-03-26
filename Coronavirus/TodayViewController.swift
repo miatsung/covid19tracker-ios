@@ -64,8 +64,44 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 print("in set label")
                 print(selectedCountry)
                 self.countryLabel.text = String(selectedCountry).uppercased()
-                
             }
+            
+            if let value = sharedContainer.string(forKey: "cases") {
+                self.casesNumLabel.text = value
+            } else {
+                self.casesNumLabel.text = "-"
+            }
+            
+            if let value = sharedContainer.string(forKey: "deaths") {
+                self.deathNumLabel.text = value
+            } else {
+                self.deathNumLabel.text = "-"
+            }
+            
+            if let value = sharedContainer.string(forKey: "recovered") {
+                self.recoverdNumLabel.text = value
+            } else {
+                self.recoverdNumLabel.text = "-"
+            }
+            
+            if let value = sharedContainer.string(forKey: "todayCases") {
+                self.todayCasesNumLabel.text = value
+            } else {
+                self.todayCasesNumLabel.text = "-"
+            }
+            
+            if let value = sharedContainer.string(forKey: "todayDeaths") {
+                self.todayDeathNumLabel.text = value
+            } else {
+                self.todayDeathNumLabel.text = "-"
+            }
+            
+            if let value = sharedContainer.string(forKey: "critical") {
+                self.criticalNumLabel.text = value
+            } else {
+                self.criticalNumLabel.text = "-"
+            }
+
         } else {
             print("Not in set label")
         }
@@ -88,20 +124,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         print(notification.userInfo!)
          
     }
-    
-//    JSON Parsing
-          
-      func updateCoroData(json : JSON) {
-          print(json[0]["cases"].stringValue)
-          casesNumLabel.text = json[0]["cases"].stringValue
-          deathNumLabel.text = json[0]["deaths"].stringValue
-          recoverdNumLabel.text = json[0]["recovered"].stringValue
-          todayCasesNumLabel.text = json[0]["todayCases"].stringValue
-          todayDeathNumLabel.text = json[0]["todayDeaths"].stringValue
-          criticalNumLabel.text = json[0]["critical"].stringValue
-
-      }
-   
 
         
 }

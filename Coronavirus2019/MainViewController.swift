@@ -1,19 +1,8 @@
-//
-//  ViewController.swift
-//  Coronavirus2019
-//
-//  Created by Mia Tsung on 3/9/20.
-//  Copyright © 2020 Mia Tsung. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 import SwiftyJSON
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
-    
     
     // Constants
     let defaults = UserDefaults.standard
@@ -27,20 +16,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var countryArray = ["China","Italy","Iran","S.Korea","Spain","Germany","USA","Japan","Switzerland","Netherlands","UK","Norway","Belgium","Denmark","Austria","Singapore","Malaysia","Hong Kong","Bahrain","Austrlia","Greece","Canada","UAE","Iraq","Iceland"]
           
-
-   
     private var globalCoronaData : JSON?
     private var countriesCoronaData : JSON?
+        
     
-    @IBOutlet weak var label1: UILabel!
+
     
     @IBOutlet weak var regionLabel: UILabel!
-
-    @IBOutlet weak var globalCasesLabel: UILabel!
+    @IBOutlet weak var dataUpdatedTimeLabel: UILabel!
+    @IBOutlet weak var globalConfirmedLabel: UILabel!
     @IBOutlet weak var globalDeathsLabel: UILabel!
-    @IBOutlet weak var globalRecoverLabel: UILabel!
+    @IBOutlet weak var globalRecoveredLabel: UILabel!
+    @IBOutlet weak var globalActiveLabel: UILabel!
+    
+    
+
 
     @IBOutlet weak var countryDataTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +50,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Register CountryDataTableViewCell.xib
         countryDataTableView.register(UINib(nibName: "CountryDataTableViewCell", bundle: nil), forCellReuseIdentifier: "customCountryDataCell")
     
-        
+        setWidgetSelectedCountry()
     }
     
     
@@ -78,11 +71,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if let countryObj = countriesCoronaData?.array![index] {
             cell.countryNameLabel.text = countryObj["country"].stringValue
-                   cell.confirmedNumLabel.text = countryObj["cases"].stringValue
-                   cell.deathsNumLabel.text = countryObj["deaths"].stringValue
-                   cell.revoceredNumLabel.text = countryObj["recovered"].stringValue
+            cell.confirmedNumLabel.text = countryObj["cases"].stringValue
+            cell.deathsNumLabel.text = countryObj["deaths"].stringValue
+            cell.revoceredNumLabel.text = countryObj["recovered"].stringValue
         } else {
-            regionLabel.text = "Data unavailable, please try again later"
+            cell.countryNameLabel.text = "-"
+            cell.confirmedNumLabel.text = "-"
+            cell.deathsNumLabel.text = "-"
+            cell.revoceredNumLabel.text = "-"
+            
+//            regionLabel.text = "Data unavailable, please try again later"
         }
        
         return cell
@@ -117,6 +115,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.regionLabel.text = "Data unavailable, please try again later"
             }
             
+            // Set updated time
+            let updatedDate = Date(timeIntervalSince1970: TimeInterval(integerLiteral: ((self.globalCoronaData?["updated"].int64 ?? 0) / 1000)))
+            print(updatedDate)
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeStyle = DateFormatter.Style.medium
+            dateFormatter.dateStyle = DateFormatter.Style.medium
+            dateFormatter.timeZone = NSTimeZone() as TimeZone
+//
+//            let formatter = DateFormatter()
+//            // initially set the format based on your datepicker date / server String
+//            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+            self.dataUpdatedTimeLabel.text = dateFormatter.string(from: updatedDate)
         }
     }
 
@@ -185,7 +197,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else {
                 print("Error \(String(describing: response.result.error))")
                 self.countriesCoronaData = self.readCountriesDataFromLocalFile()
+                
             }
+            
+            
         }
     }
 
@@ -204,11 +219,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     //writing
     func saveCountriesJsonToFile(json:JSON, filepath:URL) {
         let coroDataStr = json.rawString() //just a text
-        
-        
+                
         do {
             try coroDataStr!.write(to: filepath, atomically: true, encoding: .utf8)
             print("Success in writing corodata to local file")
+            defaults.set(NSDate().timeIntervalSince1970.stringFromTimeInterval(), forKey: "jsonUpdatedTime")
         }
         catch {
             print("Fail in writing corodata to local file")
@@ -234,13 +249,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
        
-    // JSON Parsing
-    
+//     JSON Parsing
+
     func updateGlobalCorodata(json: JSON) {
         coroDataModel.globalCasesNum = json["cases"].intValue
         coroDataModel.globalDeathsNum = json["deaths"].intValue
         coroDataModel.globalRecoverNum = json["recovered"].intValue
-        
+        coroDataModel.globalActiveNum = json["active"].intValue
+
         updateUI()
     }
    
@@ -260,28 +276,54 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // UI Update
     func updateUI() {
-        globalCasesLabel.text = String(coroDataModel.globalCasesNum)
+        globalConfirmedLabel.text = String(coroDataModel.globalCasesNum)
         globalDeathsLabel.text = String(coroDataModel.globalDeathsNum)
-        globalRecoverLabel.text = String(coroDataModel.globalRecoverNum)
-        
+        globalRecoveredLabel.text = String(coroDataModel.globalRecoverNum)
+        globalActiveLabel.text = String(coroDataModel.globalActiveNum)
+
     }
-//       func updateCoroData(json : JSON) {
-//           print(json[0]["cases"].stringValue)
-//           casesNumLabel.text = json[0]["cases"].stringValue
-//           deathNumLabel.text = json[0]["deaths"].stringValue
-//           recoverdNumLabel.text = json[0]["recovered"].stringValue
-//           todayCasesNumLabel.text = json[0]["todayCases"].stringValue
-//           todayDeathNumLabel.text = json[0]["todayDeaths"].stringValue
-//           criticalNumLabel.text = json[0]["critical"].stringValue
-//
-//       }
-//
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toWidgetCountryPicker" {
             let destinationVC = segue.destination as! WidgetCountrySelectViewController
-            destinationVC.countryArray = countryArray            
+            destinationVC.countriesData = countriesCoronaData
+            destinationVC.globalData = globalCoronaData
+//            destinationVC.countryPickerView.selectRow(2, inComponent: countryArray.count+1, animated: true)
+        }
+    }
+    
+    func setWidgetSelectedCountry() {
+        if defaults.string(forKey: "selectedCountry") == nil {
+            defaults.set("Global", forKey: "selectedCountry")
+            
+            defaults.set(globalCoronaData?["cases"].stringValue, forKey: "cases")
+            defaults.set(globalCoronaData?["deaths"].stringValue, forKey: "deaths")
+            defaults.set(globalCoronaData?["recovered"].stringValue, forKey: "recovered")
+            defaults.set(globalCoronaData?["active"].stringValue, forKey: "active")
+            defaults.set("-", forKey: "todayCases")
+            defaults.set("-", forKey: "todayDeaths")
+            defaults.set("-", forKey: "critical")
+            defaults.set("-", forKey: "active")
         }
     }
 }
+
+extension TimeInterval{
+
+    func stringFromTimeInterval() -> String {
+
+        let time = NSInteger(self)
+
+        let ms = Int((self.truncatingRemainder(dividingBy: 1)) * 1000)
+        let seconds = time % 60
+        let minutes = (time / 60) % 60
+        let hours = (time / 3600)
+
+        return String(format: "%0.2d:%0.2d:%0.2d.%0.3d",hours,minutes,seconds,ms)
+
+    }
+}
+
+ 
 
