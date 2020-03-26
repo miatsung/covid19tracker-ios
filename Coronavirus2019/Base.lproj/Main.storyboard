@@ -137,7 +137,7 @@
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                        <integer key="value" value="14"/>
+                                                                        <integer key="value" value="20"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
@@ -342,39 +342,39 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JZi-BI-Q9m" userLabel="Stack View2">
-                                                <rect key="frame" x="25" y="38" width="381" height="20"/>
+                                                <rect key="frame" x="25" y="38" width="381" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Global" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jef-5b-3zF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="420000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XK3-qj-obm">
-                                                        <rect key="frame" x="96" y="0.0" width="93.5" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="96" y="0.0" width="93.5" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thz-7u-4lq">
-                                                        <rect key="frame" x="191.5" y="0.0" width="94" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="191.5" y="0.0" width="94" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-mZ-ROl">
-                                                        <rect key="frame" x="287.5" y="0.0" width="93.5" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="287.5" y="0.0" width="93.5" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="5Ra-cM-aTr"/>
+                                                    <constraint firstAttribute="height" constant="32" id="5Ra-cM-aTr"/>
                                                 </constraints>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-gm-fqS">
-                                                <rect key="frame" x="20" y="58" width="386" height="192"/>
+                                                <rect key="frame" x="18" y="70" width="388" height="180"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableView>
                                         </subviews>
@@ -390,7 +390,7 @@
                                             <constraint firstAttribute="trailing" secondItem="rCh-gm-fqS" secondAttribute="trailing" constant="8" id="csL-bd-Pcm"/>
                                             <constraint firstAttribute="height" constant="250" id="oeb-v0-RIs"/>
                                             <constraint firstItem="rCh-gm-fqS" firstAttribute="top" secondItem="JZi-BI-Q9m" secondAttribute="bottom" id="tUb-jT-kDG"/>
-                                            <constraint firstItem="rCh-gm-fqS" firstAttribute="leading" secondItem="dAK-Bg-ugM" secondAttribute="leading" constant="20" id="wcL-yR-XNb"/>
+                                            <constraint firstItem="rCh-gm-fqS" firstAttribute="leading" secondItem="dAK-Bg-ugM" secondAttribute="leading" constant="18" id="wcL-yR-XNb"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md9-sZ-YsO" userLabel="ConView4">
@@ -446,7 +446,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="s1E-Wn-Mvu">
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="eti-ZD-LnI" kind="show" id="WtY-2N-9dl"/>
+                                <segue destination="eti-ZD-LnI" kind="show" identifier="toWidgetCountryPicker" id="WtY-2N-9dl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -454,9 +454,9 @@
                         <outlet property="countryDataTableView" destination="rCh-gm-fqS" id="g1L-Tp-ZdH"/>
                         <outlet property="globalCasesLabel" destination="XK3-qj-obm" id="aH4-un-yna"/>
                         <outlet property="globalDeathsLabel" destination="Thz-7u-4lq" id="gJ3-n7-tCu"/>
-                        <outlet property="globalLabel" destination="Jef-5b-3zF" id="e3L-VQ-XyR"/>
                         <outlet property="globalRecoverLabel" destination="zdN-mZ-ROl" id="sbM-PJ-aTJ"/>
                         <outlet property="label1" destination="e06-2v-crZ" id="ve2-ic-GyY"/>
+                        <outlet property="regionLabel" destination="CDQ-HO-kHo" id="wCi-pG-6f2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

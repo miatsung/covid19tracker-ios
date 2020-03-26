@@ -25,7 +25,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let coroDataModel = CoroDataModel()
     
-    let countryArray = ["China","Italy","Iran","S.Korea","Spain","Germany","USA","Japan","Switzerland","Netherlands","UK","Norway","Belgium","Denmark","Austria","Singapore","Malaysia","Hong Kong","Bahrain","Austrlia","Greece","Canada","UAE","Iraq","Iceland"]
+    var countryArray = ["China","Italy","Iran","S.Korea","Spain","Germany","USA","Japan","Switzerland","Netherlands","UK","Norway","Belgium","Denmark","Austria","Singapore","Malaysia","Hong Kong","Bahrain","Austrlia","Greece","Canada","UAE","Iraq","Iceland"]
           
 
    
@@ -34,7 +34,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var label1: UILabel!
     
-    @IBOutlet weak var globalLabel: UILabel!
+    @IBOutlet weak var regionLabel: UILabel!
+
     @IBOutlet weak var globalCasesLabel: UILabel!
     @IBOutlet weak var globalDeathsLabel: UILabel!
     @IBOutlet weak var globalRecoverLabel: UILabel!
@@ -46,7 +47,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         
 //        label1.layer.cornerRadius = 14
-//        
+//
         getGlobalCoronaData()
         getCountryCoronaData()
         
@@ -68,21 +69,29 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
         return countryArray.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCountryDataCell", for: indexPath) as! CountryDataTableViewCell
-        cell.countryNameLabel.text = "US"
-        cell.confirmedNumLabel.text = "150"
-        cell.deathsNumLabel.text = "15"
-        cell.revoceredNumLabel.text = "9"
+        let index = indexPath.row
+        
+        if let countryObj = countriesCoronaData?.array![index] {
+            cell.countryNameLabel.text = countryObj["country"].stringValue
+                   cell.confirmedNumLabel.text = countryObj["cases"].stringValue
+                   cell.deathsNumLabel.text = countryObj["deaths"].stringValue
+                   cell.revoceredNumLabel.text = countryObj["recovered"].stringValue
+        } else {
+            regionLabel.text = "Data unavailable, please try again later"
+        }
+       
         return cell
         
     }
    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 32
+    }
     
     //Networking & async call save to local
         //Global
@@ -105,7 +114,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let globalJsonData = self.globalCoronaData {
                 self.updateGlobalCorodata(json: globalJsonData)
             } else {
-                self.globalLabel.text = "Global data unavailable, please try again later"
+                self.regionLabel.text = "Data unavailable, please try again later"
             }
             
         }
@@ -152,10 +161,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
        
-    
-    
         
-        //Countries
+    //Countries
     func getCountryCoronaData() {
 
         var jsonData:JSON?
@@ -165,8 +172,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 jsonData = JSON(response.result.value!)
                
                 self.saveCountriesJsonToFile(json: jsonData!, filepath: self.getCountriesLocalBackupJsonPath())
-                
                 self.countriesCoronaData = jsonData
+                
+                if let countriesJsonData = self.countriesCoronaData {
+                    self.updateCountriesCorodata(json: countriesJsonData)
+                } else {
+                    self.regionLabel.text = "Data unavailable, please try again later"
+                }
+                // set countries
+                
+                
             } else {
                 print("Error \(String(describing: response.result.error))")
                 self.countriesCoronaData = self.readCountriesDataFromLocalFile()
@@ -229,6 +244,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         updateUI()
     }
    
+    func updateCountriesCorodata(json: JSON) {
+        var array : [String] = []
+        
+        for country : JSON in json.array! {
+            array.append(country["country"].stringValue)
+        }
+        
+        countryArray = array
+        print(countryArray)
+        
+        
+        countryDataTableView.reloadData()
+    }
+    
     // UI Update
     func updateUI() {
         globalCasesLabel.text = String(coroDataModel.globalCasesNum)
@@ -247,5 +276,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //
 //       }
 //
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWidgetCountryPicker" {
+            let destinationVC = segue.destination as! WidgetCountrySelectViewController
+            destinationVC.countryArray = countryArray            
+        }
+    }
 }
 
