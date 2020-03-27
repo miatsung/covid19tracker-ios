@@ -15,10 +15,7 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
 //
     var globalData : JSON?
     var countriesData : JSON?
-              
-    var selectedCountry = ""
-    var selectedRow = 0
-    var countOfCountries = 0
+    var currentSelectedRow = 0
     
     private var sharedContainer : UserDefaults?
     private let kAppGroupName = "group.mia.tsung.com.2019coro"
@@ -34,9 +31,30 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
         countryPickerView.dataSource = self
         
         self.sharedContainer = UserDefaults(suiteName: kAppGroupName)
-       
-       
-       
+        
+        // choose row
+        presetPickerViewSelection()
+        countryPickerView.selectRow(currentSelectedRow, inComponent:0, animated:true)
+        
+    }
+    
+    func presetPickerViewSelection() {
+        if let _sharedContainer = self.sharedContainer {
+            let selectedCountry = _sharedContainer.string(forKey: "selectedCountry")
+            
+            if selectedCountry == "Global" {
+                return
+            }
+            
+            if let _countriesArray = countriesData?.array {
+                for (index, countryObj) in _countriesArray.enumerated() {
+                    if countryObj["country"].stringValue == selectedCountry {
+                        currentSelectedRow = index + 1
+                        return
+                    }
+                }
+            }
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -45,8 +63,7 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if let countriesArray = countriesData?.array {
-            countOfCountries = countriesArray.count + 1
-            return countOfCountries
+            return countriesArray.count + 1
         } else {
             return 1
         }
@@ -61,8 +78,6 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedRow = row
-        
         if let sharedContainer = self.sharedContainer {
             print("get sharedcontainer")
             if row == 0 {
