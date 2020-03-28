@@ -8,7 +8,14 @@
 
 "Cases" = "Cases";
 "Death" = "Death";
+"Deaths" = "Deaths";
 "Recovered" = "Recovered";
 "Critical" = "Critical";
 "Today Cases" = "Today Cases";
 "Today Death" = "Today Death";
+"Global" = "Global";
+"Region" = "Region";
+"today" = "today";
+"Active" = "Active";
+"Scroll title" = "Scroll to choose widget country";
+"Feedback text" = "Give feedback via Email";

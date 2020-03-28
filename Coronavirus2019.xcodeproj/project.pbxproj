@@ -58,10 +58,10 @@
 		54C79E524BD60F4557812838 /* Pods-Coronavirus2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronavirus2019.debug.xcconfig"; path = "Target Support Files/Pods-Coronavirus2019/Pods-Coronavirus2019.debug.xcconfig"; sourceTree = "<group>"; };
 		7CBD11498C959FC847890975 /* Pods-Coronavirus2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronavirus2019.release.xcconfig"; path = "Target Support Files/Pods-Coronavirus2019/Pods-Coronavirus2019.release.xcconfig"; sourceTree = "<group>"; };
 		F2ACD160AF629D8123B7A1A8 /* Pods-Coronavirus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronavirus.release.xcconfig"; path = "Target Support Files/Pods-Coronavirus/Pods-Coronavirus.release.xcconfig"; sourceTree = "<group>"; };
+		FC03526C242FF2CD00BAD478 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		FC03526D242FF2CD00BAD478 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FC03526E242FF2CD00BAD478 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		FC78171024187B8500E52A5F /* shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shared.swift; sourceTree = "<group>"; };
-		FC7817122419843D00E52A5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		FC7817132419843D00E52A5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		FC7817142419843D00E52A5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		FC9B4324242BDC8800BF1939 /* CountryDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataTableViewCell.swift; sourceTree = "<group>"; };
 		FC9B4325242BDC8800BF1939 /* CountryDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryDataTableViewCell.xib; sourceTree = "<group>"; };
 		FCA5CE78241718FC00B5A80E /* Coronavirus2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coronavirus2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,7 +381,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCA5CE82241718FC00B5A80E /* Base */,
-				FC7817122419843D00E52A5F /* zh-Hans */,
+				FC03526C242FF2CD00BAD478 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -390,7 +390,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCA5CE87241718FD00B5A80E /* Base */,
-				FC7817132419843D00E52A5F /* zh-Hans */,
+				FC03526D242FF2CD00BAD478 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -399,7 +399,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCA5CE9B24171A9900B5A80E /* Base */,
-				FC7817142419843D00E52A5F /* zh-Hans */,
+				FC03526E242FF2CD00BAD478 /* zh-Hans */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
