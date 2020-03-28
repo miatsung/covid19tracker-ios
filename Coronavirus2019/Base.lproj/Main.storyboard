@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BVJ-P9-Rgp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A1B-3k-dWc">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89W-0U-GtE" userLabel="Container View">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTF-sR-a5x" userLabel="ConView0">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -214,7 +214,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAK-Bg-ugM" userLabel="ConView3">
-                                        <rect key="frame" x="0.0" y="250" width="414" height="558"/>
+                                        <rect key="frame" x="0.0" y="250" width="414" height="602"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CYF-sE-QwV" userLabel="Stack View1">
                                                 <rect key="frame" x="16" y="8" width="382" height="50"/>
@@ -245,7 +245,7 @@
                                                 </constraints>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-gm-fqS">
-                                                <rect key="frame" x="8" y="58" width="398" height="500"/>
+                                                <rect key="frame" x="8" y="58" width="398" height="544"/>
                                                 <color key="backgroundColor" white="0.67000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableView>
                                         </subviews>
@@ -285,12 +285,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Global" id="7Pa-ri-Icf"/>
                     <navigationItem key="navigationItem" title="COVID 19 data tracker" id="5VX-D2-MhO">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="s1E-Wn-Mvu">
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="eti-ZD-LnI" kind="show" identifier="toWidgetCountryPicker" id="WtY-2N-9dl"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -305,9 +303,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.81159420289862" y="108.48214285714285"/>
+            <point key="canvasLocation" x="1062" y="-240"/>
         </scene>
-        <!--Widget Country Select View Controller-->
+        <!--Settings-->
         <scene sceneID="5Pv-Td-q1h">
             <objects>
                 <viewController id="eti-ZD-LnI" customClass="WidgetCountrySelectViewController" customModule="Coronavirus2019" customModuleProvider="target" sceneMemberID="viewController">
@@ -316,7 +314,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll to choose widget country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3I9-mp-6W8">
-                                <rect key="frame" x="8" y="138" width="398" height="50"/>
+                                <rect key="frame" x="8" y="94" width="398" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RrZ-fw-lJO"/>
                                 </constraints>
@@ -325,7 +323,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLb-BK-Ub5">
-                                <rect key="frame" x="8" y="218" width="398" height="400"/>
+                                <rect key="frame" x="8" y="174" width="398" height="400"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
@@ -333,10 +331,10 @@
                                 </constraints>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uow-xk-AbK" userLabel="ConView4">
-                                <rect key="frame" x="0.0" y="618" width="414" height="244"/>
+                                <rect key="frame" x="0.0" y="574" width="414" height="239"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBK-eX-ZOy" userLabel="Feedback">
-                                        <rect key="frame" x="20" y="184" width="374" height="30"/>
+                                        <rect key="frame" x="20" y="179" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Bdm-1y-7Ud"/>
                                         </constraints>
@@ -376,6 +374,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="slQ-yj-nPH"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="o7J-Ur-rTl"/>
                     <navigationItem key="navigationItem" id="aUK-uj-ycZ"/>
                     <connections>
                         <outlet property="countryPickerView" destination="PLb-BK-Ub5" id="OUx-SL-uAx"/>
@@ -384,27 +383,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irQ-rA-RPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934.7826086956522" y="107.8125"/>
+            <point key="canvasLocation" x="1077" y="1931"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="el2-bn-mf3">
+        <!--News-->
+        <scene sceneID="1hZ-0c-LeA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BVJ-P9-Rgp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xU1-hz-jKr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="barTintColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VHP-MR-kmI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z6l-aS-Fuo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="VVt-5N-3sy" customClass="LinksViewController" customModule="Coronavirus2019" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7tE-uu-S1A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Vrt-S4-9jl"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News" id="lng-Zp-FGT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEl-yQ-0Wq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="66.666666666666671" y="108.48214285714285"/>
+            <point key="canvasLocation" x="1077" y="1215"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="2zN-Te-mrU">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="A1B-3k-dWc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nr9-kb-fsB">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="SDX-sG-OBG"/>
+                        <segue destination="5ce-fS-aUL" kind="relationship" relationship="viewControllers" id="qIb-fO-mgR"/>
+                        <segue destination="VVt-5N-3sy" kind="relationship" relationship="viewControllers" id="HZz-oe-YzX"/>
+                        <segue destination="eti-ZD-LnI" kind="relationship" relationship="viewControllers" id="PIX-oZ-0EQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRp-Rv-1FM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-613" y="471"/>
+        </scene>
+        <!--Us table view-->
+        <scene sceneID="HHC-i6-QU7">
+            <objects>
+                <tableViewController id="5ce-fS-aUL" userLabel="Us table view" customClass="UsTableViewController" customModule="Coronavirus2019" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0WV-zZ-0Po">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xeO-Os-ZcV">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xeO-Os-ZcV" id="2H0-h3-QiC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5ce-fS-aUL" id="cLq-2r-hdr"/>
+                            <outlet property="delegate" destination="5ce-fS-aUL" id="3TM-rE-Ycf"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="U.S." id="Yk8-ax-M9d"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0k-wv-GMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061" y="471"/>
         </scene>
     </scenes>
     <resources>
