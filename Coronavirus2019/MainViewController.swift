@@ -20,8 +20,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var countriesCoronaData : JSON?
         
     
-
-    
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var dataUpdatedTimeLabel: UILabel!
     @IBOutlet weak var globalConfirmedLabel: UILabel!
@@ -44,6 +42,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         getGlobalCoronaData()
         getCountryCoronaData()
         
+        
         countryDataTableView.delegate = self
         countryDataTableView.dataSource = self
         
@@ -52,9 +51,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
         setWidgetSelectedCountry()
     }
-    
-    
-    
     
     
     // CountryTableView delegate & datasource protocols
@@ -71,14 +67,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if let countryObj = countriesCoronaData?.array![index] {
             cell.countryNameLabel.text = countryObj["country"].stringValue
-            cell.confirmedNumLabel.text = countryObj["cases"].stringValue
-            cell.deathsNumLabel.text = countryObj["deaths"].stringValue
-            cell.revoceredNumLabel.text = countryObj["recovered"].stringValue
+            cell.confirmedNumLabel.text = countryObj["cases"].stringValue + " (" + countryObj["todayCases"].stringValue + ")"
+            cell.deathsNumLabel.text = countryObj["deaths"].stringValue + " (" + countryObj["todayDeaths"].stringValue + ")"
         } else {
             cell.countryNameLabel.text = "-"
             cell.confirmedNumLabel.text = "-"
-            cell.deathsNumLabel.text = "-"
-            cell.revoceredNumLabel.text = "-"
+          
+           
             
 //            regionLabel.text = "Data unavailable, please try again later"
         }
@@ -128,7 +123,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            // initially set the format based on your datepicker date / server String
 //            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-            self.dataUpdatedTimeLabel.text = dateFormatter.string(from: updatedDate)
+            self.dataUpdatedTimeLabel.text = "Updated Time: " + dateFormatter.string(from: updatedDate)
         }
     }
 

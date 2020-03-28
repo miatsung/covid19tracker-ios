@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftyJSON
+import MessageUI
 
-class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate {
     
 //    var countryArray = ["China","Italy","Iran","S.Korea","Spain","Germany","USA","Japan","Switzerland","Netherlands","UK","Norway","Belgium","Denmark","Austria","Singapore","Malaysia","Hong Kong","Bahrain","Austrlia","Greece","Canada","UAE","Iraq","Iceland"]
 //
@@ -19,9 +20,9 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     
     private var sharedContainer : UserDefaults?
     private let kAppGroupName = "group.mia.tsung.com.2019coro"
-    
 
     @IBOutlet weak var countryPickerView: UIPickerView!
+    @IBOutlet weak var feedbackButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,13 +70,6 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
         }
     }
      
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if row == 0 {
-            return "Global"
-        } else {
-            return countriesData?.array![row-1]["country"].stringValue
-        }
-    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if let sharedContainer = self.sharedContainer {
@@ -110,4 +104,32 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
         }
     }
 
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        var string = ""
+        if row == 0 {
+            string = "Global"
+        } else {
+            string =  (countriesData?.array![row-1]["country"].stringValue)!
+        }
+        
+        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    
+    @IBAction func sendFeedbackEmail(_ sender: Any) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["mia.tsung311@gmail.com"])
+            mail.setMessageBody("<p>Hello, I have some feedbacks to COVID 19 tracker app</p>", isHTML: true)
+
+            present(mail, animated: true)
+        } else {
+            print("open mail failed")
+            // show failure alert
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
 }

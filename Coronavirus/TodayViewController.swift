@@ -22,9 +22,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var todayCasesNumLabel: UILabel!
     @IBOutlet weak var todayDeathNumLabel: UILabel!
     @IBOutlet weak var criticalNumLabel: UILabel!
+    @IBOutlet weak var confirmedLabel: UILabel!
+    @IBOutlet weak var deathLabel: UILabel!
+    @IBOutlet weak var recoverLabel: UILabel!
+    @IBOutlet weak var todayConLabel: UILabel!
+    @IBOutlet weak var todayDeLabel: UILabel!
+    @IBOutlet weak var criticalLabel: UILabel!
     
     
     @IBOutlet weak var widgetView: UIView!
+    
+    
     
     // Constants
     
@@ -42,7 +50,28 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-       
+//        countryLabel.textColor = .white
+//        confirmedLabel.textColor = .white
+//        deathLabel.textColor = .white
+//        recoverLabel.textColor = .white
+//        todayConLabel.textColor = .white
+//        todayDeLabel.textColor = .white
+//        criticalLabel.textColor = .white
+        
+        casesNumLabel.textColor = .systemOrange // orange
+        todayCasesNumLabel.textColor = .systemOrange
+        deathNumLabel.textColor = .systemRed // red
+        todayDeathNumLabel.textColor = .systemRed
+        recoverdNumLabel.textColor = .systemGreen // green
+        criticalNumLabel.textColor = .systemBlue // blue
+        
+//        casesNumLabel.textColor = UIColor(red: 240, green: 170, blue: 105, alpha: 1) // orange
+//        todayCasesNumLabel.textColor = UIColor(red: 240, green: 170, blue: 105, alpha: 1)
+//        deathNumLabel.textColor = UIColor(red: 192, green: 110, blue: 129, alpha: 1) // red
+//        todayDeathNumLabel.textColor = UIColor(red: 192, green: 110, blue: 129, alpha: 1)
+//        recoverdNumLabel.textColor = UIColor(red: 139, green: 183, blue: 155, alpha: 1) // green
+//        criticalNumLabel.textColor = UIColor(red: 23, green: 190, blue: 214, alpha: 1) // blue
+        
         self.sharedContainer = UserDefaults(suiteName: kAppGroupName)
         self.fetchDataFromSharedContainer()
         self.widgetView.setNeedsDisplay()
