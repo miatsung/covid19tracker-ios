@@ -11,6 +11,7 @@
 		202B7475E967A652291526E9 /* Pods_Coronavirus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2901CE4FB8A703D5292EB236 /* Pods_Coronavirus.framework */; };
 		FC035270242FFFEE00BAD478 /* UsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03526F242FFFEE00BAD478 /* UsTableViewController.swift */; };
 		FC0352722430009F00BAD478 /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0352712430009F00BAD478 /* LinksViewController.swift */; };
+		FC03527424300F8A00BAD478 /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03527324300F8A00BAD478 /* StateCell.swift */; };
 		FC78170E241879E200E52A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA5CE84241718FD00B5A80E /* Assets.xcassets */; };
 		FC78171124187B8500E52A5F /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78171024187B8500E52A5F /* shared.swift */; };
 		FC9B4326242BDC8800BF1939 /* CountryDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9B4324242BDC8800BF1939 /* CountryDataTableViewCell.swift */; };
@@ -65,6 +66,7 @@
 		FC03526E242FF2CD00BAD478 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		FC03526F242FFFEE00BAD478 /* UsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsTableViewController.swift; sourceTree = "<group>"; };
 		FC0352712430009F00BAD478 /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
+		FC03527324300F8A00BAD478 /* StateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
 		FC78171024187B8500E52A5F /* shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shared.swift; sourceTree = "<group>"; };
 		FC9B4324242BDC8800BF1939 /* CountryDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataTableViewCell.swift; sourceTree = "<group>"; };
 		FC9B4325242BDC8800BF1939 /* CountryDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryDataTableViewCell.xib; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				FCA5CE89241718FD00B5A80E /* Info.plist */,
 				FC03526F242FFFEE00BAD478 /* UsTableViewController.swift */,
 				FC0352712430009F00BAD478 /* LinksViewController.swift */,
+				FC03527324300F8A00BAD478 /* StateCell.swift */,
 			);
 			path = Coronavirus2019;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				FC9B4326242BDC8800BF1939 /* CountryDataTableViewCell.swift in Sources */,
 				FCB24A5924296AFD00ABB8F3 /* CoroDataModel.swift in Sources */,
 				FC0352722430009F00BAD478 /* LinksViewController.swift in Sources */,
+				FC03527424300F8A00BAD478 /* StateCell.swift in Sources */,
 				FCB24A572429611D00ABB8F3 /* WidgetCountrySelectViewController.swift in Sources */,
 				FC035270242FFFEE00BAD478 /* UsTableViewController.swift in Sources */,
 				FC78171124187B8500E52A5F /* shared.swift in Sources */,

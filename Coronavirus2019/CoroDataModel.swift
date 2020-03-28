@@ -17,8 +17,6 @@ class CoroDataModel {
     var countryDeathsNum = 0
     var countryTodayDeathsNum = 0
     var countryRecoverNum = 0
-    
-    
 }
 
 

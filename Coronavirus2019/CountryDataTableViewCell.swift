@@ -14,14 +14,8 @@ class CountryDataTableViewCell: UITableViewCell {
     @IBOutlet weak var confirmedNumLabel: UILabel!
     @IBOutlet weak var deathsNumLabel: UILabel!
 
-    
-
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-  
 }
