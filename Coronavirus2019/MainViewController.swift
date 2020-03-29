@@ -16,10 +16,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let coroDataModel = CoroDataModel()
     
-    var countryArray = ["China","Italy","Iran","S.Korea","Spain","Germany","USA","Japan","Switzerland","Netherlands","UK","Norway","Belgium","Denmark","Austria","Singapore","Malaysia","Hong Kong","Bahrain","Austrlia","Greece","Canada","UAE","Iraq","Iceland"]
+    var countryArray : [String] = []
           
     private var globalCoronaData : JSON?
     private var countriesCoronaData : JSON?
+    private var langStr = Locale.current.languageCode
+
         
     
     @IBOutlet weak var regionLabel: UILabel!
@@ -34,13 +36,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        langStr = Locale.current.languageCode
+        
         // Do any additional setup after loading the view.
         
 //        label1.layer.cornerRadius = 14
         
         view.backgroundColor = Consts.MAIN_BG_COLOR
         countryDataTableView.backgroundColor = Consts.MAIN_BG_COLOR
-      
         
 //
         getGlobalCoronaData()
@@ -70,8 +74,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.backgroundColor = UIColor.clear
         let index = indexPath.row
         
+        let langStr = Locale.current.languageCode
         if let countryObj = countriesCoronaData?.array![index] {
-            cell.countryNameLabel.text = countryObj["country"].stringValue
+            if langStr == "zh" {
+                cell.countryNameLabel.text = CountriesDict.NAMES[countryObj["country"].stringValue]
+            }
+            else {
+                cell.countryNameLabel.text = countryObj["country"].stringValue
+            }
             cell.confirmedNumLabel.text = countryObj["cases"].stringValue + " (" + countryObj["todayCases"].stringValue + ")"
             cell.deathsNumLabel.text = countryObj["deaths"].stringValue + " (" + countryObj["todayDeaths"].stringValue + ")"
         } else {
@@ -180,10 +190,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             if response.result.isSuccess {
                 print("Success! Got countries coro data")
                 jsonData = JSON(response.result.value!)
-               
-                self.saveCountriesJsonToFile(json: jsonData!, filepath: self.getCountriesLocalBackupJsonPath())
-                self.countriesCoronaData = jsonData
-                
+
+                let arrayJsonData = jsonData?.arrayValue
+                let sortedJsonData = arrayJsonData!.sorted { $0["cases"].intValue > $1["cases"].intValue }
+                                
+                self.countriesCoronaData = JSON(sortedJsonData)
+                self.saveCountriesJsonToFile(json: self.countriesCoronaData!, filepath: self.getCountriesLocalBackupJsonPath())
+
                 if let countriesJsonData = self.countriesCoronaData {
                     self.updateCountriesCorodata(json: countriesJsonData)
                 } else {

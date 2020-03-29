@@ -12,7 +12,6 @@
 		FC035270242FFFEE00BAD478 /* UsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03526F242FFFEE00BAD478 /* UsTableViewController.swift */; };
 		FC0352722430009F00BAD478 /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0352712430009F00BAD478 /* LinksViewController.swift */; };
 		FC03527424300F8A00BAD478 /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03527324300F8A00BAD478 /* StateCell.swift */; };
-		FC0352762430225700BAD478 /* ContriesDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0352752430225700BAD478 /* ContriesDict.swift */; };
 		FC03527D24304BFA00BAD478 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03527C24304BFA00BAD478 /* Consts.swift */; };
 		FC78170E241879E200E52A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA5CE84241718FD00B5A80E /* Assets.xcassets */; };
 		FC78171124187B8500E52A5F /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78171024187B8500E52A5F /* shared.swift */; };
@@ -30,6 +29,7 @@
 		FCA5CEA024171A9900B5A80E /* Coronavirus.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCA5CE9324171A9900B5A80E /* Coronavirus.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCB24A572429611D00ABB8F3 /* WidgetCountrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */; };
 		FCB24A5924296AFD00ABB8F3 /* CoroDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB24A5824296AFD00ABB8F3 /* CoroDataModel.swift */; };
+		FCFAF6A72431247B0003E327 /* CountriesDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAF6A62431247B0003E327 /* CountriesDict.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +66,6 @@
 		FC03526F242FFFEE00BAD478 /* UsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsTableViewController.swift; sourceTree = "<group>"; };
 		FC0352712430009F00BAD478 /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
 		FC03527324300F8A00BAD478 /* StateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
-		FC0352752430225700BAD478 /* ContriesDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContriesDict.swift; sourceTree = "<group>"; };
 		FC0352772430269B00BAD478 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		FC0352782430269B00BAD478 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FC0352792430269C00BAD478 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		FCA5CEA624174F2700B5A80E /* Coronavirus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coronavirus.entitlements; sourceTree = "<group>"; };
 		FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCountrySelectViewController.swift; sourceTree = "<group>"; };
 		FCB24A5824296AFD00ABB8F3 /* CoroDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoroDataModel.swift; sourceTree = "<group>"; };
+		FCFAF6A62431247B0003E327 /* CountriesDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesDict.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 		FCA5CE6F241718FC00B5A80E = {
 			isa = PBXGroup;
 			children = (
-				FC0352752430225700BAD478 /* ContriesDict.swift */,
+				FCFAF6A62431247B0003E327 /* CountriesDict.swift */,
 				FC78171024187B8500E52A5F /* shared.swift */,
 				FCA5CE7A241718FC00B5A80E /* Coronavirus2019 */,
 				FCA5CE9724171A9900B5A80E /* Coronavirus */,
@@ -373,7 +373,7 @@
 				FCB24A572429611D00ABB8F3 /* WidgetCountrySelectViewController.swift in Sources */,
 				FC035270242FFFEE00BAD478 /* UsTableViewController.swift in Sources */,
 				FC78171124187B8500E52A5F /* shared.swift in Sources */,
-				FC0352762430225700BAD478 /* ContriesDict.swift in Sources */,
+				FCFAF6A72431247B0003E327 /* CountriesDict.swift in Sources */,
 				FCA5CE7E241718FC00B5A80E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

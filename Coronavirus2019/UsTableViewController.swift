@@ -16,6 +16,70 @@ class UsTableViewController: UITableViewController {
     var usJsonData : JSON?
     let US_LOCAL_FILENAME = "us.json"
     
+    var langStr = Locale.current.languageCode
+    
+    let symbolToStateZh = [
+        "AL": "阿拉巴马州",
+        "AK": "阿拉斯加州",
+        "AS": "美属萨摩亚",
+        "AZ": "亚利桑那",
+        "AR": "阿肯色州",
+        "CA": "加利福尼亚州",
+        "CO": "科罗拉多州",
+        "CT": "康乃狄克州",
+        "DE": "特拉华州",
+        "DC": "哥伦比亚特区",
+        "FM": "密克罗尼西亚联邦",
+        "FL": "佛罗里达",
+        "GA": "佐治亚州",
+        "GU": "关岛",
+        "HI": "夏威夷",
+        "ID": "爱达荷州",
+        "IL": "伊利诺伊州",
+        "IN": "印第安那州",
+        "IA": "爱荷华州",
+        "KS": "堪萨斯州",
+        "KY": "肯塔基州",
+        "LA": "路易斯安那州",
+        "ME": "缅因州",
+        "MH": "马绍尔群岛",
+        "MD": "马里兰州",
+        "MA": "马萨诸塞州",
+        "MI": "密西根州",
+        "MN": "明尼苏达州",
+        "MS": "密西西比州",
+        "MO": "密苏里州",
+        "MT": "蒙大拿",
+        "NE": "内布拉斯加",
+        "NV": "内华达州",
+        "NH": "新罕布什尔",
+        "NJ": "新泽西州",
+        "NM": "新墨西哥",
+        "NY": "纽约",
+        "NC": "北卡罗来纳",
+        "ND": "北达科他州",
+        "MP": "北马里亚纳群岛",
+        "OH": "俄亥俄",
+        "OK": "俄克拉荷马州",
+        "OR": "俄勒冈州",
+        "PW": "帕劳",
+        "PA": "宾夕法尼亚州",
+        "PR": "波多黎各",
+        "RI": "罗德岛",
+        "SC": "南卡罗来纳",
+        "SD": "南达科他州",
+        "TN": "田纳西州",
+        "TX": "德州",
+        "UT": "犹他州",
+        "VT": "佛蒙特",
+        "VI": "维尔京群岛",
+        "VA": "维吉尼亚州",
+        "WA": "华盛顿州",
+        "WV": "西弗吉尼亚",
+        "WI": "威斯康星州",
+        "WY": "怀俄明"
+    ]
+    
     let symbolToState = [
         "AL": "Alabama",
         "AK": "Alaska",
@@ -80,6 +144,8 @@ class UsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        langStr = Locale.current.languageCode
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -182,7 +248,12 @@ class UsTableViewController: UITableViewController {
         cell.backgroundColor = UIColor.clear
         
         if let stateObj = self.usJsonData?.arrayValue[indexPath.row] {
-            cell.stateLabel.text = symbolToState[stateObj["state"].stringValue]
+            if langStr == "zh" {
+                cell.stateLabel.text = symbolToStateZh[stateObj["state"].stringValue]
+            }
+            else {
+                cell.stateLabel.text = symbolToState[stateObj["state"].stringValue]
+            }
             cell.confirmedLabel.text = stateObj["positive"].stringValue
             cell.deathsLabel.text = stateObj["death"].stringValue
         }

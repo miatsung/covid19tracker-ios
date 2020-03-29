@@ -263,7 +263,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Global" id="7Pa-ri-Icf"/>
+                    <tabBarItem key="tabBarItem" title="Global" image="globe" catalog="system" selectedImage="globe" id="7Pa-ri-Icf"/>
                     <navigationItem key="navigationItem" title="COVID 19 data tracker" id="5VX-D2-MhO">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="s1E-Wn-Mvu">
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -351,7 +351,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="slQ-yj-nPH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="o7J-Ur-rTl"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="o7J-Ur-rTl"/>
                     <navigationItem key="navigationItem" id="aUK-uj-ycZ"/>
                     <connections>
                         <outlet property="countryPickerView" destination="PLb-BK-Ub5" id="OUx-SL-uAx"/>
@@ -477,7 +477,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.039215686270000001" green="0.23921568630000001" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1i5-DT-CME" firstAttribute="leading" secondItem="Vrt-S4-9jl" secondAttribute="leading" id="JP4-N7-CzM"/>
                             <constraint firstItem="Vrt-S4-9jl" firstAttribute="trailing" secondItem="1i5-DT-CME" secondAttribute="trailing" id="KJl-E0-9x7"/>
@@ -486,7 +486,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vrt-S4-9jl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" id="lng-Zp-FGT"/>
+                    <tabBarItem key="tabBarItem" title="News" image="link" catalog="system" id="lng-Zp-FGT"/>
                     <connections>
                         <outlet property="bingLinkButton" destination="iau-rD-Fal" id="z2I-97-PdW"/>
                         <outlet property="cdcButton" destination="bol-VL-e7r" id="cED-hP-wdq"/>
@@ -505,6 +505,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="A1B-3k-dWc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nr9-kb-fsB">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.50980392156862742" green="0.80000000000000004" blue="0.8666666666666667" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
@@ -640,7 +641,7 @@
                             <outlet property="delegate" destination="5ce-fS-aUL" id="3TM-rE-Ycf"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="U.S." id="Yk8-ax-M9d"/>
+                    <tabBarItem key="tabBarItem" title="U.S." image="us logo" selectedImage="us logo" id="Yk8-ax-M9d"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0k-wv-GMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -649,5 +650,8 @@
     </scenes>
     <resources>
         <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="globe" catalog="system" width="64" height="60"/>
+        <image name="link" catalog="system" width="64" height="58"/>
+        <image name="us logo" width="25" height="25"/>
     </resources>
 </document>
