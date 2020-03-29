@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Today Deaths"; ObjectID = "9EW-oz-sKf"; */
-"9EW-oz-sKf.text" = "今日死亡";
+"9EW-oz-sKf.text" = "Today Deaths";
 
 /* Class = "UILabel"; text = "20"; ObjectID = "9v9-9k-ZiO"; */
 "9v9-9k-ZiO.text" = "20";
@@ -9,31 +9,31 @@
 "C1y-Fy-Hwl.text" = "4";
 
 /* Class = "UILabel"; text = "COUNTRY"; ObjectID = "I4E-a2-puP"; */
-"I4E-a2-puP.text" = "国家地区";
+"I4E-a2-puP.text" = "COUNTRY";
 
 /* Class = "UILabel"; text = "4"; ObjectID = "SSW-58-WcL"; */
 "SSW-58-WcL.text" = "4";
 
 /* Class = "UILabel"; text = "Deaths"; ObjectID = "Tbr-Qc-Wiy"; */
-"Tbr-Qc-Wiy.text" = "死亡";
+"Tbr-Qc-Wiy.text" = "Deaths";
 
 /* Class = "UILabel"; text = "3"; ObjectID = "XFa-c7-jcO"; */
 "XFa-c7-jcO.text" = "3";
 
 /* Class = "UILabel"; text = "Recovered"; ObjectID = "a68-eZ-qRA"; */
-"a68-eZ-qRA.text" = "康复";
+"a68-eZ-qRA.text" = "Recovered";
 
 /* Class = "UILabel"; text = "3"; ObjectID = "eer-UI-1qP"; */
 "eer-UI-1qP.text" = "3";
 
 /* Class = "UILabel"; text = "Critical"; ObjectID = "gas-cy-i57"; */
-"gas-cy-i57.text" = "重症";
+"gas-cy-i57.text" = "Critical";
 
 /* Class = "UILabel"; text = "Today Confirmed"; ObjectID = "gub-aP-WyI"; */
-"gub-aP-WyI.text" = "今日确诊";
+"gub-aP-WyI.text" = "Today Confirmed";
 
 /* Class = "UILabel"; text = "20"; ObjectID = "h0R-GF-zD5"; */
 "h0R-GF-zD5.text" = "20";
 
 /* Class = "UILabel"; text = "Confirmed"; ObjectID = "qpa-9F-aNT"; */
-"qpa-9F-aNT.text" = "确诊";
+"qpa-9F-aNT.text" = "Confirmed";

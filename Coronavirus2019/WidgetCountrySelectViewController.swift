@@ -10,7 +10,9 @@ import UIKit
 import SwiftyJSON
 import MessageUI
 
+
 class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate {
+
     
 //    var countryArray = ["China","Italy","Iran","S.Korea","Spain","Germany","USA","Japan","Switzerland","Netherlands","UK","Norway","Belgium","Denmark","Austria","Singapore","Malaysia","Hong Kong","Bahrain","Austrlia","Greece","Canada","UAE","Iraq","Iceland"]
 //
@@ -28,6 +30,7 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Consts.MAIN_BG_COLOR        
 
         // Do any additional setup after loading the view.
         countryPickerView.delegate = self

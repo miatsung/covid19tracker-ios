@@ -86,7 +86,7 @@ class UsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+        self.tableView.backgroundColor = Consts.MAIN_BG_COLOR
         fetchData()
     }
     
@@ -179,6 +179,7 @@ class UsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stateCell", for: indexPath) as! StateCell
+        cell.backgroundColor = UIColor.clear
         
         if let stateObj = self.usJsonData?.arrayValue[indexPath.row] {
             cell.stateLabel.text = symbolToState[stateObj["state"].stringValue]

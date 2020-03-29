@@ -13,3 +13,4 @@ extension Notification.Name {
     static let didCompleteTask = Notification.Name("didCompleteTask")
     static let completedLengthyDownload = Notification.Name("completedLengthyDownload")
 }
+

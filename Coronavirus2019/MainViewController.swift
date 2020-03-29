@@ -23,7 +23,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     
     @IBOutlet weak var regionLabel: UILabel!
-    @IBOutlet weak var dataUpdatedTimeLabel: UILabel!
     @IBOutlet weak var globalConfirmedLabel: UILabel!
     @IBOutlet weak var globalDeathsLabel: UILabel!
     @IBOutlet weak var globalRecoveredLabel: UILabel!
@@ -38,6 +37,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         
 //        label1.layer.cornerRadius = 14
+        
+        view.backgroundColor = Consts.MAIN_BG_COLOR
+        countryDataTableView.backgroundColor = Consts.MAIN_BG_COLOR
+      
+        
 //
         getGlobalCoronaData()
         getCountryCoronaData()
@@ -63,6 +67,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCountryDataCell", for: indexPath) as! CountryDataTableViewCell
+        cell.backgroundColor = UIColor.clear
         let index = indexPath.row
         
         if let countryObj = countriesCoronaData?.array![index] {
@@ -121,7 +126,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            // initially set the format based on your datepicker date / server String
 //            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-            self.dataUpdatedTimeLabel.text = "Updated Time: " + dateFormatter.string(from: updatedDate)
+//            self.dataUpdatedTimeLabel.text = "Updated Time: " + dateFormatter.string(from: updatedDate)
         }
     }
 

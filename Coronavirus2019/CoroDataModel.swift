@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class CoroDataModel {
     var globalCasesNum = 0
     var globalDeathsNum = 0
