@@ -1,54 +1,39 @@
 
-/* Class = "UILabel"; text = "Deaths (today)"; ObjectID = "2RD-va-fI3"; */
-"2RD-va-fI3.text" = "死亡 (今日数据)";
+/* Class = "UILabel"; text = "Today Deaths"; ObjectID = "9EW-oz-sKf"; */
+"9EW-oz-sKf.text" = "今日死亡";
 
-/* Class = "UILabel"; text = "03-31-2020 11:11:11"; ObjectID = "2aC-MB-SCL"; */
-"2aC-MB-SCL.text" = "03-31-2020 11:11:11";
+/* Class = "UILabel"; text = "20"; ObjectID = "9v9-9k-ZiO"; */
+"9v9-9k-ZiO.text" = "20";
 
-/* Class = "UILabel"; text = "Scroll to choose widget country"; ObjectID = "3I9-mp-6W8"; */
-"3I9-mp-6W8.text" = "选择今日页面所显示的国家";
+/* Class = "UILabel"; text = "4"; ObjectID = "C1y-Fy-Hwl"; */
+"C1y-Fy-Hwl.text" = "4";
 
-/* Class = "UINavigationItem"; title = "COVID 19 data tracker"; ObjectID = "5VX-D2-MhO"; */
-"5VX-D2-MhO.title" = "COVID 19 数据追踪";
+/* Class = "UILabel"; text = "COUNTRY"; ObjectID = "I4E-a2-puP"; */
+"I4E-a2-puP.text" = "国家地区";
 
-/* Class = "UIViewController"; title = "MainViewController"; ObjectID = "BYZ-38-t0r"; */
-"BYZ-38-t0r.title" = "MainViewController";
+/* Class = "UILabel"; text = "4"; ObjectID = "SSW-58-WcL"; */
+"SSW-58-WcL.text" = "4";
 
-/* Class = "UILabel"; text = "420000"; ObjectID = "Bzl-MC-TdU"; */
-"Bzl-MC-TdU.text" = "420000";
+/* Class = "UILabel"; text = "Deaths"; ObjectID = "Tbr-Qc-Wiy"; */
+"Tbr-Qc-Wiy.text" = "死亡";
 
-/* Class = "UILabel"; text = "Global"; ObjectID = "CDQ-HO-kHo"; */
-"CDQ-HO-kHo.text" = "全球";
-    
-/* Class = "UILabel"; text = "Region"; ObjectID = "E5k-VI-2CR"; */
-"E5k-VI-2CR.text" = "国家地区";
+/* Class = "UILabel"; text = "3"; ObjectID = "XFa-c7-jcO"; */
+"XFa-c7-jcO.text" = "3";
 
-/* Class = "UILabel"; text = "500"; ObjectID = "IJc-DA-PIV"; */
-"IJc-DA-PIV.text" = "500";
+/* Class = "UILabel"; text = "Recovered"; ObjectID = "a68-eZ-qRA"; */
+"a68-eZ-qRA.text" = "康复";
 
-/* Class = "UILabel"; text = "10000"; ObjectID = "NuD-en-km3"; */
-"NuD-en-km3.text" = "10000";
+/* Class = "UILabel"; text = "3"; ObjectID = "eer-UI-1qP"; */
+"eer-UI-1qP.text" = "3";
 
-/* Class = "UILabel"; text = "Deaths"; ObjectID = "Vkt-ri-63A"; */
-"Vkt-ri-63A.text" = "死亡";
+/* Class = "UILabel"; text = "Critical"; ObjectID = "gas-cy-i57"; */
+"gas-cy-i57.text" = "重症";
 
-/* Class = "UILabel"; text = "Confirmed"; ObjectID = "l7o-mU-f6K"; */
-"l7o-mU-f6K.text" = "确诊";
+/* Class = "UILabel"; text = "Today Confirmed"; ObjectID = "gub-aP-WyI"; */
+"gub-aP-WyI.text" = "今日确诊";
 
-/* Class = "UILabel"; text = "Active"; ObjectID = "lLE-t2-o2y"; */
-"lLE-t2-o2y.text" = "现存";
+/* Class = "UILabel"; text = "20"; ObjectID = "h0R-GF-zD5"; */
+"h0R-GF-zD5.text" = "20";
 
-/* Class = "UILabel"; text = "Recovered"; ObjectID = "lTO-Pv-iU7"; */
-"lTO-Pv-iU7.text" = "治愈";
-
-/* Class = "UIButton"; normalTitle = "📨 Give feedback via Email"; ObjectID = "oBK-eX-ZOy"; */
-"oBK-eX-ZOy.normalTitle" = "📨 提出 APP 反馈意见";
-
-/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "s1E-Wn-Mvu"; */
-"s1E-Wn-Mvu.title" = "Item";
-
-/* Class = "UILabel"; text = "15000"; ObjectID = "xee-2f-8qk"; */
-"xee-2f-8qk.text" = "15000";
-
-/* Class = "UILabel"; text = "Confirmed (today)"; ObjectID = "z6B-Ao-gp4"; */
-"z6B-Ao-gp4.text" = "确诊 (今日数据)";
+/* Class = "UILabel"; text = "Confirmed"; ObjectID = "qpa-9F-aNT"; */
+"qpa-9F-aNT.text" = "确诊";

@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Deaths (today)"; ObjectID = "2RD-va-fI3"; */
-"2RD-va-fI3.text" = "死亡 (今日数据)";
+"2RD-va-fI3.text" = "死亡 (今日)";
 
 /* Class = "UILabel"; text = "03-31-2020 11:11:11"; ObjectID = "2aC-MB-SCL"; */
 "2aC-MB-SCL.text" = "03-31-2020 11:11:11";
@@ -42,7 +42,7 @@
 "lTO-Pv-iU7.text" = "治愈";
 
 /* Class = "UIButton"; normalTitle = "📨 Give feedback via Email"; ObjectID = "oBK-eX-ZOy"; */
-"oBK-eX-ZOy.normalTitle" = "📨 提出 APP 反馈意见";
+"oBK-eX-ZOy.normalTitle" = "📨 请提出 APP 反馈意见";
 
 /* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "s1E-Wn-Mvu"; */
 "s1E-Wn-Mvu.title" = "Item";
@@ -51,4 +51,4 @@
 "xee-2f-8qk.text" = "15000";
 
 /* Class = "UILabel"; text = "Confirmed (today)"; ObjectID = "z6B-Ao-gp4"; */
-"z6B-Ao-gp4.text" = "确诊 (今日数据)";
+"z6B-Ao-gp4.text" = "确诊 (今日)";

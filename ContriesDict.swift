@@ -10,8 +10,8 @@ import Foundation
 
 class ContriesDict {
     
-    func for(name : String) -> String? {
-        
+    func forName(_ name : String) -> String? {
+        return ""
     }
 }
 
