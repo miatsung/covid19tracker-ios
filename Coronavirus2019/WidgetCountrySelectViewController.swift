@@ -17,6 +17,8 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     var globalData : JSON?
     var countriesData : JSON?
     var currentSelectedRow = 0
+    let COUNTRIES_FILENAME = "countries.json"
+
     
     private var sharedContainer : UserDefaults?
     private let kAppGroupName = "group.mia.tsung.com.2019coro"
@@ -35,10 +37,41 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
         
         // choose row
         presetPickerViewSelection()
-        countryPickerView.selectRow(currentSelectedRow, inComponent:0, animated:true)
-        
+        fetchData()
     }
     
+    func fetchData() {
+        self.countriesData = self.readCountriesDataFromLocalFile()
+        countryPickerView.reloadAllComponents()
+    }
+    
+    //reading countries data from output.txt
+    func readCountriesDataFromLocalFile() -> JSON {
+        do {
+            let filepath = getCountriesLocalBackupJsonPath()
+            print(filepath)
+            let content = try String(contentsOf: filepath, encoding: .utf8)
+            print(content)
+            
+            let json = JSON(parseJSON: content)
+            return json
+        }
+        catch {/* error handling here */
+            print("Parsing JSON failed")
+            return JSON.init(parseJSON: "")
+        }
+    }
+       
+    func getCountriesLocalBackupJsonPath() -> URL {
+        var path : URL = URL.init(fileURLWithPath: "")
+        let file = COUNTRIES_FILENAME //this is the file. we will write to and read from it
+
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            path = dir.appendingPathComponent(file)
+        }
+        return path
+    }
+        
     func presetPickerViewSelection() {
         if let _sharedContainer = self.sharedContainer {
             let selectedCountry = _sharedContainer.string(forKey: "selectedCountry")
@@ -56,6 +89,8 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
                 }
             }
         }
+        
+        countryPickerView.selectRow(currentSelectedRow, inComponent:0, animated:true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

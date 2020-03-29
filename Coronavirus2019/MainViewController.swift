@@ -11,6 +11,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     let COUNTRIES_URL = "https://corona.lmao.ninja/countries"
     let globalFileURL = ""
     let FileURL = ""
+    let COUNTRIES_FILENAME = "countries.json"
+    let GLOBAL_FILENAME = "global.json"
     
     let coroDataModel = CoroDataModel()
     
@@ -26,8 +28,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var globalDeathsLabel: UILabel!
     @IBOutlet weak var globalRecoveredLabel: UILabel!
     @IBOutlet weak var globalActiveLabel: UILabel!
-    
-    
 
 
     @IBOutlet weak var countryDataTableView: UITableView!
@@ -72,8 +72,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             cell.countryNameLabel.text = "-"
             cell.confirmedNumLabel.text = "-"
-          
-           
             
 //            regionLabel.text = "Data unavailable, please try again later"
         }
@@ -129,7 +127,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func getGlobalLocalBackupJsonPath() -> URL {
         var path : URL = URL.init(fileURLWithPath: "")
-        let file = "api.json" //this is the file. we will write to and read from it
+        let file = GLOBAL_FILENAME //this is the file. we will write to and read from it
 
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             path = dir.appendingPathComponent(file)
@@ -202,7 +200,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func getCountriesLocalBackupJsonPath() -> URL {
         var path : URL = URL.init(fileURLWithPath: "")
-        let file = "api.json" //this is the file. we will write to and read from it
+        let file = COUNTRIES_FILENAME //this is the file. we will write to and read from it
 
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             path = dir.appendingPathComponent(file)
