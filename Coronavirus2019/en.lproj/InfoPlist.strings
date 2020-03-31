@@ -1,0 +1,8 @@
+/* 
+  i18n.strings
+  Coronavirus2019
+
+  Created by Mia Tsung on 3/30/20.
+  Copyright © 2020 Mia Tsung. All rights reserved.
+*/
+"CFBundleDisplayName" = "COVID-19 tracker";

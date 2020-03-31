@@ -31,6 +31,8 @@
 		FCB24A5924296AFD00ABB8F3 /* CoroDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB24A5824296AFD00ABB8F3 /* CoroDataModel.swift */; };
 		FCFAF6A72431247B0003E327 /* CountriesDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAF6A62431247B0003E327 /* CountriesDict.swift */; };
 		FCFAF6A82432C0430003E327 /* CountriesDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAF6A62431247B0003E327 /* CountriesDict.swift */; };
+		FCFAF6AB2432D6320003E327 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCFAF6AD2432D6320003E327 /* InfoPlist.strings */; };
+		FCFAF6B12432D76A0003E327 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCFAF6AD2432D6320003E327 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCountrySelectViewController.swift; sourceTree = "<group>"; };
 		FCB24A5824296AFD00ABB8F3 /* CoroDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoroDataModel.swift; sourceTree = "<group>"; };
 		FCFAF6A62431247B0003E327 /* CountriesDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesDict.swift; sourceTree = "<group>"; };
+		FCFAF6AC2432D6320003E327 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FCFAF6AE2432D6390003E327 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 		FCA5CE7A241718FC00B5A80E /* Coronavirus2019 */ = {
 			isa = PBXGroup;
 			children = (
+				FCFAF6AD2432D6320003E327 /* InfoPlist.strings */,
 				FCA5CE7B241718FC00B5A80E /* AppDelegate.swift */,
 				FCA5CE81241718FC00B5A80E /* Main.storyboard */,
 				FC9B4324242BDC8800BF1939 /* CountryDataTableViewCell.swift */,
@@ -281,6 +286,7 @@
 				FCA5CE85241718FD00B5A80E /* Assets.xcassets in Resources */,
 				FC9B4327242BDC8800BF1939 /* CountryDataTableViewCell.xib in Resources */,
 				FCA5CE83241718FC00B5A80E /* Main.storyboard in Resources */,
+				FCFAF6AB2432D6320003E327 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC78170E241879E200E52A5F /* Assets.xcassets in Resources */,
+				FCFAF6B12432D76A0003E327 /* InfoPlist.strings in Resources */,
 				FCA5CE9C24171A9900B5A80E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +431,15 @@
 				FC0352792430269C00BAD478 /* zh-Hans */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		FCFAF6AD2432D6320003E327 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCFAF6AC2432D6320003E327 /* en */,
+				FCFAF6AE2432D6390003E327 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
