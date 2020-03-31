@@ -122,7 +122,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             // Set updated time
-            let updatedDate = Date(timeIntervalSince1970: TimeInterval(integerLiteral: ((self.globalCoronaData?["updated"].int64 ?? 0) / 1000)))
+//            let updatedDate = Date(timeIntervalSince1970: TimeInterval(integerLiteral: ((self.globalCoronaData?["updated"].int64 ?? 0) / 1000)))
             
             let dateFormatter = DateFormatter()
             dateFormatter.timeStyle = DateFormatter.Style.medium
@@ -232,7 +232,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         do {
             try coroDataStr!.write(to: filepath, atomically: true, encoding: .utf8)
             print("Success in writing corodata to local file")
-            defaults.set(NSDate().timeIntervalSince1970.stringFromTimeInterval(), forKey: "jsonUpdatedTime")
+//            defaults.set(NSDate().timeIntervalSince1970.stringFromTimeInterval(), forKey: "jsonUpdatedTime")
         }
         catch {
             print("Fail in writing corodata to local file")

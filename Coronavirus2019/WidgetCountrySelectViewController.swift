@@ -23,7 +23,7 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     let GLOBAL_FILENAME = "global.json"
     
     private var sharedContainer : UserDefaults?
-    private let kAppGroupName = "group.mia.tsung.com.2019coro"
+    private let kAppGroupName = "group.mia.tsung.covid19"
 
     @IBOutlet weak var countryPickerView: UIPickerView!
     @IBOutlet weak var feedbackButton: UIButton!

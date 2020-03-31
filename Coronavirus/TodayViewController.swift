@@ -38,10 +38,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let CORONAVIRUS_URL = "https://corona.lmao.ninja/countries"
 
     let buttonTitle = NSLocalizedString("bear", comment: "The name of the animal")
-    private let kAppGroupName = "group.mia.tsung.com.2019coro"
+    private let kAppGroupName = "group.mia.tsung.covid19"
     private var sharedContainer : UserDefaults?
     
     private var langStr : String!
+    private var globalCoronaData : JSON?
     
     // Variable
 //    let locationManager = CLLocationManager()
@@ -49,15 +50,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-//        countryLabel.textColor = .white
-//        confirmedLabel.textColor = .white
-//        deathLabel.textColor = .white
-//        recoverLabel.textColor = .white
-//        todayConLabel.textColor = .white
-//        todayDeLabel.textColor = .white
-//        criticalLabel.textColor = .white
-        
         langStr = Locale.current.languageCode
         
         casesNumLabel.textColor = .systemOrange // orange
@@ -67,15 +59,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         recoverdNumLabel.textColor = .systemGreen // green
         criticalNumLabel.textColor = .systemBlue // blue
         
-//        casesNumLabel.textColor = UIColor(red: 240, green: 170, blue: 105, alpha: 1) // orange
-//        todayCasesNumLabel.textColor = UIColor(red: 240, green: 170, blue: 105, alpha: 1)
-//        deathNumLabel.textColor = UIColor(red: 192, green: 110, blue: 129, alpha: 1) // red
-//        todayDeathNumLabel.textColor = UIColor(red: 192, green: 110, blue: 129, alpha: 1)
-//        recoverdNumLabel.textColor = UIColor(red: 139, green: 183, blue: 155, alpha: 1) // green
-//        criticalNumLabel.textColor = UIColor(red: 23, green: 190, blue: 214, alpha: 1) // blue
-        
         self.sharedContainer = UserDefaults(suiteName: kAppGroupName)
-        self.fetchDataFromSharedContainer()
+        
+        if self.sharedContainer?.string(forKey: "selectedCountry") == nil {
+            getGlobalCoronaData()
+        } else {
+            fetchDataFromSharedContainer()
+        }
+        
         self.widgetView.setNeedsDisplay()
     }
        
@@ -154,8 +145,29 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Do something now
         print("Received Data")
         print(notification.userInfo!)
-         
     }
+    
+    
+    func getGlobalCoronaData() {
 
-        
+        var jsonData:JSON?
+        Alamofire.request(GLOBAL_URL, method: .get).responseJSON { response in
+            if response.result.isSuccess {
+                jsonData = JSON(response.result.value!)
+                
+                if self.langStr == "zh" {
+                    self.countryLabel.text = CountriesDict.NAMES[ "Global" ]
+                } else {
+                    self.countryLabel.text = "GLOBAL"
+                }
+
+                self.casesNumLabel.text = jsonData?["cases"].stringValue
+                self.deathNumLabel.text = jsonData?["deaths"].stringValue
+                self.recoverdNumLabel.text = jsonData?["recovered"].stringValue
+                self.todayCasesNumLabel.text = "-"
+                self.todayDeathNumLabel.text = "-"
+                self.criticalNumLabel.text = "-"
+            }
+        }
+    }
 }
