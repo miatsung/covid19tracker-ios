@@ -36,7 +36,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         langStr = Locale.current.languageCode
         
         // Do any additional setup after loading the view.
@@ -60,10 +59,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         setWidgetSelectedCountry()
     }
     
-    
     // CountryTableView delegate & datasource protocols
     
-  
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countryArray.count
@@ -120,12 +117,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let globalJsonData = self.globalCoronaData {
                 self.updateGlobalCorodata(json: globalJsonData)
             } else {
-                self.regionLabel.text = "Data unavailable, please try again later"
+                let message = " Global data is unavailable, please try again later."
+                self.dataUnavailableAlert(message: message)
             }
             
             // Set updated time
             let updatedDate = Date(timeIntervalSince1970: TimeInterval(integerLiteral: ((self.globalCoronaData?["updated"].int64 ?? 0) / 1000)))
-            print(updatedDate)
             
             let dateFormatter = DateFormatter()
             dateFormatter.timeStyle = DateFormatter.Style.medium
@@ -200,7 +197,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if let countriesJsonData = self.countriesCoronaData {
                     self.updateCountriesCorodata(json: countriesJsonData)
                 } else {
-                    self.regionLabel.text = "Data unavailable, please try again later"
+                    let message = "Data is unavailable, please try again later."
+                    self.dataUnavailableAlert(message: message)
                 }
                 // set countries
                 
@@ -247,9 +245,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func readCountriesDataFromLocalFile() -> JSON {
         do {
             let filepath = getCountriesLocalBackupJsonPath()
-            print(filepath)
             let content = try String(contentsOf: filepath, encoding: .utf8)
-            print(content)
             
             let json = JSON(parseJSON: content)
             return json
@@ -279,8 +275,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         countryArray = array
-        print(countryArray)
-        
         
         countryDataTableView.reloadData()
     }
@@ -318,6 +312,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             defaults.set("-", forKey: "active")
         }
     }
+    
+    func dataUnavailableAlert(message: String) {
+        let alertController = UIAlertController(title: " ", message: message, preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+        }
+
+        alertController.addAction(okAction)
+
+        self.present(alertController, animated: true)
+     
+    }
 }
 
 extension TimeInterval{
@@ -335,6 +343,3 @@ extension TimeInterval{
 
     }
 }
-
- 
-

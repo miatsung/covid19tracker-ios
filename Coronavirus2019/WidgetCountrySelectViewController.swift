@@ -54,15 +54,12 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     func readGlobalDataFromLocalFile() -> JSON {
         do {
             let filepath = getGlobalLocalBackupJsonPath()
-            print(filepath)
             let content = try String(contentsOf: filepath, encoding: .utf8)
-            print(content)
             
             let json = JSON(parseJSON: content)
             return json
         }
         catch {/* error handling here */
-            print("Parsing JSON failed")
             return JSON.init(parseJSON: "")
         }
     }
@@ -80,15 +77,12 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     func readCountriesDataFromLocalFile() -> JSON {
         do {
             let filepath = getCountriesLocalBackupJsonPath()
-            print(filepath)
             let content = try String(contentsOf: filepath, encoding: .utf8)
-            print(content)
             
             let json = JSON(parseJSON: content)
             return json
         }
         catch {/* error handling here */
-            print("Parsing JSON failed")
             return JSON.init(parseJSON: "")
         }
     }
@@ -142,9 +136,7 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
             print("get sharedcontainer")
             if row == 0 {
                 sharedContainer.set("Global", forKey: "selectedCountry")
-                
-                print("global data", globalData)
-                
+                                
                 sharedContainer.set(globalData?["cases"].stringValue, forKey: "cases")
                 sharedContainer.set(globalData?["deaths"].stringValue, forKey: "deaths")
                 sharedContainer.set(globalData?["recovered"].stringValue, forKey: "recovered")

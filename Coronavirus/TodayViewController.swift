@@ -77,9 +77,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.sharedContainer = UserDefaults(suiteName: kAppGroupName)
         self.fetchDataFromSharedContainer()
         self.widgetView.setNeedsDisplay()
-        print("viewdidload")
-   
-
     }
        
     
