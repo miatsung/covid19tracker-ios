@@ -20,7 +20,7 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     var countriesData : JSON?
     var currentSelectedRow = 0
     let COUNTRIES_FILENAME = "countries.json"
-
+    let GLOBAL_FILENAME = "global.json"
     
     private var sharedContainer : UserDefaults?
     private let kAppGroupName = "group.mia.tsung.com.2019coro"
@@ -45,10 +45,38 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     
     func fetchData() {
         self.countriesData = self.readCountriesDataFromLocalFile()
+        self.globalData = self.readGlobalDataFromLocalFile()
         countryPickerView.reloadAllComponents()
+
     }
-    
-    //reading countries data from output.txt
+        
+    //reading global data from output.txt
+    func readGlobalDataFromLocalFile() -> JSON {
+        do {
+            let filepath = getGlobalLocalBackupJsonPath()
+            print(filepath)
+            let content = try String(contentsOf: filepath, encoding: .utf8)
+            print(content)
+            
+            let json = JSON(parseJSON: content)
+            return json
+        }
+        catch {/* error handling here */
+            print("Parsing JSON failed")
+            return JSON.init(parseJSON: "")
+        }
+    }
+       
+    func getGlobalLocalBackupJsonPath() -> URL {
+        var path : URL = URL.init(fileURLWithPath: "")
+        let file = GLOBAL_FILENAME //this is the file. we will write to and read from it
+
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            path = dir.appendingPathComponent(file)
+        }
+        return path
+    }
+
     func readCountriesDataFromLocalFile() -> JSON {
         do {
             let filepath = getCountriesLocalBackupJsonPath()
@@ -64,7 +92,7 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
             return JSON.init(parseJSON: "")
         }
     }
-       
+    
     func getCountriesLocalBackupJsonPath() -> URL {
         var path : URL = URL.init(fileURLWithPath: "")
         let file = COUNTRIES_FILENAME //this is the file. we will write to and read from it
@@ -115,6 +143,8 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
             if row == 0 {
                 sharedContainer.set("Global", forKey: "selectedCountry")
                 
+                print("global data", globalData)
+                
                 sharedContainer.set(globalData?["cases"].stringValue, forKey: "cases")
                 sharedContainer.set(globalData?["deaths"].stringValue, forKey: "deaths")
                 sharedContainer.set(globalData?["recovered"].stringValue, forKey: "recovered")
@@ -143,11 +173,11 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     }
 
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        var string = ""
+        var string : String!
         if row == 0 {
-            string = "Global"
+            string = CountriesDict.NAMES["Global"]
         } else {
-            string =  (countriesData?.array![row-1]["country"].stringValue)!
+            string = CountriesDict.NAMES[ (countriesData?.array![row-1]["country"].stringValue)! ]
         }
         
         return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])

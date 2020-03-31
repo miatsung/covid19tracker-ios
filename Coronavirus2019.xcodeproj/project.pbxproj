@@ -30,6 +30,7 @@
 		FCB24A572429611D00ABB8F3 /* WidgetCountrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB24A562429611C00ABB8F3 /* WidgetCountrySelectViewController.swift */; };
 		FCB24A5924296AFD00ABB8F3 /* CoroDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB24A5824296AFD00ABB8F3 /* CoroDataModel.swift */; };
 		FCFAF6A72431247B0003E327 /* CountriesDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAF6A62431247B0003E327 /* CountriesDict.swift */; };
+		FCFAF6A82432C0430003E327 /* CountriesDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFAF6A62431247B0003E327 /* CountriesDict.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -382,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCFAF6A82432C0430003E327 /* CountriesDict.swift in Sources */,
 				FCA5CE9924171A9900B5A80E /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

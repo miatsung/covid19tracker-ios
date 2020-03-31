@@ -32,8 +32,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var widgetView: UIView!
     
-    
-    
     // Constants
     
     let GLOBAL_URL = "https://corona.lmao.ninja/all"
@@ -42,7 +40,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let buttonTitle = NSLocalizedString("bear", comment: "The name of the animal")
     private let kAppGroupName = "group.mia.tsung.com.2019coro"
     private var sharedContainer : UserDefaults?
-
+    
+    private var langStr : String!
+    
     // Variable
 //    let locationManager = CLLocationManager()
     
@@ -57,6 +57,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 //        todayConLabel.textColor = .white
 //        todayDeLabel.textColor = .white
 //        criticalLabel.textColor = .white
+        
+        langStr = Locale.current.languageCode
         
         casesNumLabel.textColor = .systemOrange // orange
         todayCasesNumLabel.textColor = .systemOrange
@@ -92,7 +94,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             {
                 print("in set label")
                 print(selectedCountry)
-                self.countryLabel.text = String(selectedCountry).uppercased()
+                if langStr == "zh" {
+                    self.countryLabel.text = CountriesDict.NAMES[ String(selectedCountry) ]
+                } else {
+                    self.countryLabel.text = String(selectedCountry).uppercased()
+                }
             }
             
             if let value = sharedContainer.string(forKey: "cases") {

@@ -10,6 +10,7 @@ import UIKit
 
 class CountriesDict {
     static let NAMES : [String: String] = [
+        "Global": "全球",
         "USA": "美国",
         "Italy": "意大利",
         "Spain": "西班牙",
