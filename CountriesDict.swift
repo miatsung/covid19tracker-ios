@@ -211,6 +211,7 @@ class CountriesDict {
         "Papua New Guinea": "巴布亚新几内亚",
         "St. Vincent Grenadines": "圣文森特格林纳丁斯",
         "Timor-Leste": "东帝汶",
-        "China": "中国"
+        "China": "中国",
+        "Botswana": "博茨瓦纳"
     ]
 }

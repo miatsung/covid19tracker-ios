@@ -55,7 +55,7 @@ class UsTableViewController: UITableViewController {
         "NH": "新罕布什尔",
         "NJ": "新泽西州",
         "NM": "新墨西哥",
-        "NY": "纽约",
+        "NY": "纽约州",
         "NC": "北卡罗来纳",
         "ND": "北达科他州",
         "MP": "北马里亚纳群岛",

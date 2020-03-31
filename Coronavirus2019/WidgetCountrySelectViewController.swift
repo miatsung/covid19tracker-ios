@@ -28,9 +28,12 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     @IBOutlet weak var countryPickerView: UIPickerView!
     @IBOutlet weak var feedbackButton: UIButton!
     
+    private var langStr : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Consts.MAIN_BG_COLOR        
+        view.backgroundColor = Consts.MAIN_BG_COLOR
+        langStr = Locale.current.languageCode
 
         // Do any additional setup after loading the view.
         countryPickerView.delegate = self
@@ -165,14 +168,26 @@ class WidgetCountrySelectViewController: UIViewController, UIPickerViewDataSourc
     }
 
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        var string : String!
+        var countryName : String!
         if row == 0 {
-            string = CountriesDict.NAMES["Global"]
+            if langStr == "zh" {
+                countryName = CountriesDict.NAMES["Global"]
+            } else {
+                countryName = "Global"
+            }
         } else {
-            string = CountriesDict.NAMES[ (countriesData?.array![row-1]["country"].stringValue)! ]
+            countryName = countriesData?.array![row-1]["country"].stringValue
+            
+            if langStr == "zh" {
+                if let _string = CountriesDict.NAMES[ countryName ] {
+                    countryName = _string
+                } else {
+                    countryName = "-"
+                }
+            }
         }
         
-        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        return NSAttributedString(string: countryName, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
     @IBAction func sendFeedbackEmail(_ sender: Any) {
